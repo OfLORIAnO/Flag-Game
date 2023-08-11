@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite + React</title>
+        <!-- Yandex Games SDK -->
+        <!-- <script src="https://yandex.ru/games/sdk/v2"></script>
+        <script>
+            YaGames.init().then((ysdk) => {
+                ysdk.adv.showFullscreenAdv();
+                const buttonElem = document.querySelector('#button');
+                let commonCounter = 0;
+                buttonElem.addEventListener('click', () => {
+                    let counter = 0;
+                    function getCallback(callbackName) {
+                        return () => {
+                            counter += 1;
+                            commonCounter += 1;
+                            console.log(
+                                `showFullscreenAdv; callback ${callbackName}; ${counter} call`
+                            );
+                        };
+                    }
+                    ysdk.adv.showFullscreenAdv({
+                        callbacks: {
+                            onClose: getCallback('onClose'),
+                            onOpen: getCallback('onOpen'),
+                            onError: getCallback('onError'),
+                            onOffline: getCallback('onOffline'),
+                        },
+                    });
+                });
+            });
+        </script> -->
+    </head>
+    <body>
+        <div id="root"></div>
+        <!-- <button id="button">Показать рекламу</button> -->
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
+</html>

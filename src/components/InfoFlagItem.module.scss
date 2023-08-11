@@ -1,0 +1,57 @@
+@import '../settings.scss';
+.items_container {
+    padding: 20px;
+    display: flex;
+    align-content: center;
+    @media (max-width: 470px) {
+        display: block;
+    }
+}
+.item {
+    display: flex;
+    @media (max-width: 470px) {
+        display: block;
+    }
+    .img_container {
+        flex: 0 0 145px;
+        display: flex;
+        align-items: center;
+        @media (max-width: 470px) {
+            width: 200px;
+            margin: 0px auto 10px auto;
+        }
+    }
+    img {
+        object-fit: contain;
+        border-radius: 10px;
+        width: 100%;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0px 0px 0px 10px;
+        & > *:not(:last-child) {
+            margin: 0px 0px 10px 0px;
+        }
+        @media (max-width: 470px) {
+            display: block;
+            margin: 0;
+            width: 100%;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: 400;
+            @media (max-width: 600px) {
+                font-size: 16px;
+            }
+            span {
+                font-size: 20px;
+                font-weight: 600;
+                @media (max-width: 600px) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
