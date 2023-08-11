@@ -5,15 +5,24 @@ import './settings.scss';
 // import Game from './pages/Game';
 import FlagInfo from './pages/FlagInfo';
 import { useSelector } from 'react-redux';
-import { selectFlagInfo, selectHome } from './redux/Slices/PagesSlice';
+import {
+    selectFlagInfo,
+    selectGamePrepare,
+    selectHome,
+} from './redux/Slices/PagesSlice';
 import Home from './pages/Home';
+import GamePrepare from './pages/GamePrepare';
 function App() {
     const flagInfo = useSelector(selectFlagInfo);
     const home = useSelector(selectHome);
-    return <>
-        {flagInfo && <FlagInfo />}
-        {home && <Home />}
-    </>;
+    const gamePrepare = useSelector(selectGamePrepare);
+    return (
+        <>
+            {flagInfo && <FlagInfo />}
+            {home && <Home />}
+            {gamePrepare && <GamePrepare />}
+        </>
+    );
 }
 
 export default App;

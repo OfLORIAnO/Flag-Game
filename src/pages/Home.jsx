@@ -14,10 +14,26 @@ function Home() {
         <>
             <Header title='Флаги' imgSource={FlagHeaderImg} isActive={false} />
             <div className={s.wrapper}>
-                <HomeRouters title='Начать игру' imageSrc={PlayImg} MoveTo={""}/>
-                <HomeRouters title='Все флаги' imageSrc={FlagImg} MoveTo={"flagInfo"}/>
-                <HomeRouters title='Система оценивания' imageSrc={StarImg} MoveTo={""}/>
-                <HomeRouters title='Профиль' imageSrc={ProfileImg} MoveTo={""}/>
+                <HomeRouters
+                    title='Начать игру'
+                    imageSrc={PlayImg}
+                    MoveTo={'gamePrepare'}
+                />
+                <HomeRouters
+                    title='Все флаги'
+                    imageSrc={FlagImg}
+                    MoveTo={'flagInfo'}
+                />
+                <HomeRouters
+                    title='Система оценивания'
+                    imageSrc={StarImg}
+                    MoveTo={''}
+                />
+                <HomeRouters
+                    title='Профиль'
+                    imageSrc={ProfileImg}
+                    MoveTo={''}
+                />
             </div>
         </>
     );
