@@ -3,11 +3,11 @@ import s from './Header.module.scss';
 import { useDispatch } from 'react-redux';
 import { changePage } from '../redux/Slices/PagesSlice';
 import backImg from '../assets/back.png';
-function Header({ title, imgSource, moveTo, isActive }) {
+function Header({ title, imgSource, moveTo }) {
     const dispatch = useDispatch();
     return (
         <div className={s.container}>
-            {isActive && (
+            {moveTo && (
                 <button
                     className={s.changePage}
                     onClick={() => dispatch(changePage(moveTo))}

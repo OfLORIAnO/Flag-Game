@@ -12,7 +12,7 @@ import HomeRouters from '../components/HomeRouters';
 function Home() {
     return (
         <>
-            <Header title='Флаги' imgSource={FlagHeaderImg} isActive={false} />
+            <Header title='Флаги' imgSource={FlagHeaderImg} />
             <div className={s.wrapper}>
                 <HomeRouters
                     title='Начать игру'
@@ -32,7 +32,7 @@ function Home() {
                 <HomeRouters
                     title='Профиль'
                     imageSrc={ProfileImg}
-                    MoveTo={''}
+                    MoveTo={'profile'}
                 />
             </div>
         </>

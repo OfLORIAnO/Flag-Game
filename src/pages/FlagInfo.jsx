@@ -35,12 +35,10 @@ function FlagInfo() {
 
     return (
         <>
-            <Header
-                title={'Все флаги'}
-                imgSource={FlagImg}
-                moveTo={'Home'}
-                isActive={true}
-            />
+            <Header title={'Все флаги'} imgSource={FlagImg} moveTo={'home'} />
+            {/* {data.map((item) => (
+                <span>{item.name}, </span>
+            ))} */}
             <div className={s.wrapper}>
                 <Search />
                 <div className={s.items_wrapper}>{renderData()}</div>

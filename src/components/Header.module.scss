@@ -7,15 +7,22 @@
     box-shadow: $box-shadow;
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: relative;
 }
 .changePage {
-    margin: 0px 0px 0px 30px;
+    position: absolute;
+    top: 15%;
+    left: 30px;
     justify-self: flex-start;
     padding: 10px;
     border-radius: 50%;
-    background: $primary;
+    background: none;
     color: $font-color;
     border: none;
+    @media (max-width: 550px) {
+        left: 5px;
+    }
     &:hover {
         img {
             transform: translateX(-5px);
@@ -26,7 +33,6 @@
     }
 }
 .content {
-    margin: 0 auto;
     display: flex;
     img {
         margin: 0px 10px 0px 0px;
