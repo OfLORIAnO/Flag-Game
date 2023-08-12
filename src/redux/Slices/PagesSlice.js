@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import dataFile from '../data.json';
 const initialState = {
-    home: false,
-    flagInfo: true,
+    home: true,
+    flagInfo: false,
     gamePrepare: false,
     profile: false,
+    game: false,
 };
 export const pageSlice = createSlice({
     name: 'pageStore',
@@ -16,20 +16,30 @@ export const pageSlice = createSlice({
                 state.flagInfo = false;
                 state.gamePrepare = false;
                 state.profile = false;
+                state.game = false;
             } else if (action.payload === 'flagInfo') {
                 state.flagInfo = true;
                 state.home = false;
                 state.gamePrepare = false;
                 state.profile = false;
+                state.game = false;
+            } else if (action.payload === 'profile') {
+                state.profile = true;
+                state.home = false;
+                state.flagInfo = false;
+                state.gamePrepare = false;
+                state.game = false;
             } else if (action.payload === 'gamePrepare') {
                 state.gamePrepare = true;
                 state.home = false;
                 state.flagInfo = false;
                 state.profile = false;
-            } else if (action.payload === 'profile') {
-                state.profile = true;
+                state.game = false;
+            } else if (action.payload === 'game') {
+                state.game = true;
                 state.home = false;
                 state.flagInfo = false;
+                state.profile = false;
                 state.gamePrepare = false;
             }
         },
@@ -39,5 +49,6 @@ export const selectFlagInfo = (state) => state.pageStore.flagInfo;
 export const selectHome = (state) => state.pageStore.home;
 export const selectGamePrepare = (state) => state.pageStore.gamePrepare;
 export const selectProfile = (state) => state.pageStore.profile;
+export const selectGame = (state) => state.pageStore.game;
 export const { changePage } = pageSlice.actions;
 export default pageSlice.reducer;

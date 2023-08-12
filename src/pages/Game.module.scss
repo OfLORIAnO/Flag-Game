@@ -1,0 +1,54 @@
+@import '../settings.scss';
+.container {
+    height: 80px;
+    width: 100%;
+    background: $primary;
+    text-align: center;
+    box-shadow: $box-shadow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.changePage {
+    position: absolute;
+    top: 15%;
+    left: 30px;
+    justify-self: flex-start;
+    padding: 10px;
+    border-radius: 50%;
+    background: none;
+    color: $font-color;
+    border: none;
+    @media (max-width: 550px) {
+        left: 5px;
+    }
+    &:hover {
+        img {
+            transform: translateX(-5px);
+        }
+    }
+    img {
+        transition-duration: 0.3s;
+    }
+}
+.content {
+    display: flex;
+    img {
+        margin: 0px 10px 0px 0px;
+        width: 40px;
+        height: 40px;
+        @media (max-width: 450px) {
+            height: 35px;
+            width: 35px;
+        }
+    }
+}
+h1 {
+    font-size: 40px;
+    @media (max-width: 450px) {
+        font-size: 35px;
+    }
+}
+.game {
+}

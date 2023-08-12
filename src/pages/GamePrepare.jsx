@@ -13,8 +13,8 @@ export default function GamePrepare() {
             <Header title={'Игра'} imgSource={FlagImg} moveTo={'home'} />
             <h2 className={s.title}>Выберите сложность</h2>
             <div className={s.wrapper}>
-                <GameLevel imageSrc={ChildImg} title={'Ребёнок'} level={0} />
-                <GameLevel imageSrc={StudentImg} title={'Студент'} level={1} />
+                <GameLevel imageSrc={ChildImg} title={'Ребёнок'} level={1} />
+                <GameLevel imageSrc={StudentImg} title={'Студент'} level={12} />
             </div>
         </>
     );

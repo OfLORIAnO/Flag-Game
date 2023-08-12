@@ -5,7 +5,7 @@
         "imageName": "Azerbaijan.png",
         "capital": "Баку",
         "population": "9477100",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "imageName": "Aland Islands.png",
         "capital": "бл. центр – Мариехамн",
         "population": "29013",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "imageName": "Albania.png",
         "capital": "Тирана",
         "population": "2821977",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "imageName": "Algeria.png",
         "capital": "Алжир",
         "population": "38700000",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 5,
@@ -37,7 +37,7 @@
         "imageName": "American Samoa.png",
         "capital": "Паго-Паго",
         "population": "65519",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 6,
@@ -45,7 +45,7 @@
         "imageName": "Angilla.png",
         "capital": "Валли",
         "population": "13038",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 7,
@@ -53,7 +53,7 @@
         "imageName": "Angola.png",
         "capital": "Луанда",
         "population": "20609294",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 8,
@@ -61,7 +61,7 @@
         "imageName": "Andorra.png",
         "capital": "Андорра-ла-Велья",
         "population": "76098",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 9,
@@ -69,7 +69,7 @@
         "imageName": "Antarctica.png",
         "capital": "толицы нет",
         "population": "0",
-        "level": [12]
+        "level": 12
     },
 
     {
@@ -78,7 +78,7 @@
         "imageName": "Antigua and Barbuda.png",
         "capital": "Сент-Джонс",
         "population": "86295",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 11,
@@ -86,7 +86,7 @@
         "imageName": "Argentina.png",
         "capital": "Буэнос-Айрес",
         "population": "41660096",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 12,
@@ -94,7 +94,7 @@
         "imageName": "Armenia.png",
         "capital": "Ереван",
         "population": "3017400",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 13,
@@ -102,7 +102,7 @@
         "imageName": "Aruba.png",
         "capital": "Ораньестад",
         "population": "103889",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 14,
@@ -110,7 +110,7 @@
         "imageName": "Afghanistan.png",
         "capital": "Кабул",
         "population": "25500100",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 15,
@@ -118,7 +118,7 @@
         "imageName": "Bagam.png",
         "capital": "Нассау",
         "population": "351461",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 16,
@@ -126,7 +126,7 @@
         "imageName": "Bangladesh.png",
         "capital": "Дакка",
         "population": "15251801",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 17,
@@ -134,7 +134,7 @@
         "imageName": "Barbados.png",
         "capital": "Бриджтаун",
         "population": "285000",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 18,
@@ -142,7 +142,7 @@
         "imageName": "Bahrain.png",
         "capital": "Манама",
         "population": "1234571",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 19,
@@ -150,7 +150,7 @@
         "imageName": "Belarus.png",
         "capital": "Минск",
         "population": "9468100",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 20,
@@ -158,7 +158,7 @@
         "imageName": "Belize.png",
         "capital": "Бельмопан",
         "population": "349728",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 21,
@@ -166,7 +166,7 @@
         "imageName": "Belgium.png",
         "capital": "Брюссель",
         "population": "11132269",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 22,
@@ -174,7 +174,7 @@
         "imageName": "Benin.png",
         "capital": "Порто-Ново",
         "population": "10323000",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 23,
@@ -182,7 +182,7 @@
         "imageName": "Bermuda.png",
         "capital": "Гамильтон",
         "population": "64237",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 24,
@@ -190,7 +190,7 @@
         "imageName": "Bulgaria.png",
         "capital": "София",
         "population": "7282041",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 25,
@@ -198,7 +198,7 @@
         "imageName": "Bolivia.png",
         "capital": "Сукре",
         "population": "10027254",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 26,
@@ -206,7 +206,7 @@
         "imageName": "Bosnia and Herzegovina.png",
         "capital": "Сараево",
         "population": "3791622",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 27,
@@ -214,7 +214,7 @@
         "imageName": "Botswana.png",
         "capital": "Габороне",
         "population": "2024904",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 28,
@@ -222,7 +222,7 @@
         "imageName": "Brazil.png",
         "capital": "Бразилиа",
         "population": "20103271",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 29,
@@ -230,7 +230,7 @@
         "imageName": "British territory in the Indian Ocean.png",
         "capital": "Диего-Гарсия",
         "population": "2800",
-        "level": [12]
+        "level": 12
     },
 
     {
@@ -239,7 +239,7 @@
         "imageName": "Brunei.png",
         "capital": "Бандар-Сери-Бегаван",
         "population": "393162",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 31,
@@ -247,7 +247,7 @@
         "imageName": "Burkina Faso.png",
         "capital": "Уагадугу",
         "population": "17322796",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 32,
@@ -255,7 +255,7 @@
         "imageName": "Burundi.png",
         "capital": "Бужумбура",
         "population": "10163000",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 33,
@@ -263,7 +263,7 @@
         "imageName": "Butane.png",
         "capital": "Тхимпху",
         "population": "745200",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 34,
@@ -271,7 +271,7 @@
         "imageName": "Vanuatu.png",
         "capital": "Порт-Вила",
         "population": "264652",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 35,
@@ -279,7 +279,7 @@
         "imageName": "Great Britain.png",
         "capital": "Лондон",
         "population": "63705000",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 36,
@@ -287,7 +287,7 @@
         "imageName": "Hungary.png",
         "capital": "Будапешт",
         "population": "9906000",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 37,
@@ -295,7 +295,7 @@
         "imageName": "Venezuela.png",
         "capital": "Каракас",
         "population": "28946101",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 38,
@@ -303,7 +303,7 @@
         "imageName": "Vietnam.png",
         "capital": "Ханой",
         "population": "89708900",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 39,
@@ -311,7 +311,7 @@
         "imageName": "Gabon.png",
         "capital": "Либревиль",
         "population": "1672000",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 40,
@@ -319,7 +319,7 @@
         "imageName": "Haiti.png",
         "capital": "Порт-о-Пренс",
         "population": "10413211",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 41,
@@ -327,7 +327,7 @@
         "imageName": "Guyana.png",
         "capital": "Джорджтаун",
         "population": "784894",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 42,
@@ -335,7 +335,7 @@
         "imageName": "Gambia.png",
         "capital": "Банжул",
         "population": "1849000",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 43,
@@ -343,7 +343,7 @@
         "imageName": "Ghana.png",
         "capital": "Аккра",
         "population": "24658823",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 44,
@@ -351,7 +351,7 @@
         "imageName": "Guadelup.png",
         "capital": "Административный центр Бас-Тер",
         "population": "400736",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 45,
@@ -359,7 +359,7 @@
         "imageName": "Guatemala.png",
         "capital": "Гватемала",
         "population": "15806675",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 46,
@@ -367,7 +367,7 @@
         "imageName": "Guinea.png",
         "capital": "Конакри",
         "population": "10824200",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 47,
@@ -375,7 +375,7 @@
         "imageName": "Guinea-Bisau.png",
         "capital": "Бисау",
         "population": "1704000",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 48,
@@ -383,7 +383,7 @@
         "imageName": "Germany.png",
         "capital": "Берлин",
         "population": "80619000",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 49,
@@ -391,7 +391,7 @@
         "imageName": "Gernssey.png",
         "capital": "Сент-Питер-Порт",
         "population": "62915",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 50,
@@ -399,7 +399,7 @@
         "imageName": "Gibraltar.png",
         "capital": "Гибралтар",
         "population": "33140",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 51,
@@ -407,7 +407,7 @@
         "imageName": "Honduras.png",
         "capital": "Тегусигальпа",
         "population": "8555072",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 52,
@@ -415,7 +415,7 @@
         "imageName": "Hong Kong.png",
         "capital": "толицы нет",
         "population": "7182724",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 53,
@@ -423,7 +423,7 @@
         "imageName": "Grenada.png",
         "capital": "Сент-Джорджес",
         "population": "103328",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 54,
@@ -431,7 +431,7 @@
         "imageName": "Greenland.png",
         "capital": "дминистративный центр Нуук",
         "population": "55984",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 55,
@@ -439,7 +439,7 @@
         "imageName": "Greece.png",
         "capital": "Афины",
         "population": "10815197",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 56,
@@ -447,7 +447,7 @@
         "imageName": "Georgia.png",
         "capital": "Тбилиси",
         "population": "4483800",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 57,
@@ -455,7 +455,7 @@
         "imageName": "Guam.png",
         "capital": "Хагатна",
         "population": "159358",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 58,
@@ -463,7 +463,7 @@
         "imageName": "Denmark.png",
         "capital": "Копенгаген",
         "population": "5627235",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 59,
@@ -471,7 +471,7 @@
         "imageName": "Jersey.png",
         "capital": "Сент-Хельер",
         "population": "97857",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 60,
@@ -479,7 +479,7 @@
         "imageName": "Djibuti.png",
         "capital": "Джибути",
         "population": "873000",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 61,
@@ -487,7 +487,7 @@
         "imageName": "Dominica.png",
         "capital": "Розо",
         "population": "71293",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 62,
@@ -495,7 +495,7 @@
         "imageName": "Dominican Republic.png",
         "capital": "Санто-Доминго",
         "population": "9445281",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 63,
@@ -503,7 +503,7 @@
         "imageName": "EU.png",
         "capital": "Брюссель, Люксембург, Страсбург",
         "population": "50819111",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 64,
@@ -511,7 +511,7 @@
         "imageName": "Egypt.png",
         "capital": "Каир",
         "population": "86127000",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 65,
@@ -519,7 +519,7 @@
         "imageName": "Zambia.png",
         "capital": "Лусака",
         "population": "14580290",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 66,
@@ -527,7 +527,7 @@
         "imageName": "West Sahara.png",
         "capital": "Эль-Аюн",
         "population": "567000",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 67,
@@ -535,7 +535,7 @@
         "imageName": "Zimbabwe.png",
         "capital": "Хараре",
         "population": "12973808",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 68,
@@ -543,7 +543,7 @@
         "imageName": "Israel.png",
         "capital": "Иерусалим",
         "population": "8146300",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 69,
@@ -551,7 +551,7 @@
         "imageName": "India.png",
         "capital": "Нью-Дели",
         "population": "12416100",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 70,
@@ -559,7 +559,7 @@
         "imageName": "Indonesia.png",
         "capital": "Джакарта",
         "population": "24986600",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 71,
@@ -567,7 +567,7 @@
         "imageName": "Jordan.png",
         "capital": "Амман",
         "population": "6558900",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 72,
@@ -575,7 +575,7 @@
         "imageName": "Iraq.png",
         "capital": "Багдад",
         "population": "34035000",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 73,
@@ -583,7 +583,7 @@
         "imageName": "Iran.png",
         "capital": "Тегеран",
         "population": "77288000",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 74,
@@ -591,7 +591,7 @@
         "imageName": "Ireland.png",
         "capital": "Дублин",
         "population": "4593100",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 75,
@@ -599,7 +599,7 @@
         "imageName": "Iceland.png",
         "capital": "Рейкьявик",
         "population": "325671",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 76,
@@ -607,7 +607,7 @@
         "imageName": "Spain.png",
         "capital": "Мадрид",
         "population": "46609700",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 77,
@@ -615,7 +615,7 @@
         "imageName": "Italy.png",
         "capital": "Рим",
         "population": "59943933",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 78,
@@ -623,7 +623,7 @@
         "imageName": "Yemen.png",
         "capital": "Сана",
         "population": "25235000",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 79,
@@ -631,7 +631,7 @@
         "imageName": "Cape Verde.png",
         "capital": "Прая",
         "population": "491875",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 80,
@@ -639,7 +639,7 @@
         "imageName": "Kazakhstan.png",
         "capital": "Нур-Султан",
         "population": "17186000",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 81,
@@ -647,7 +647,7 @@
         "imageName": "Cambodia.png",
         "capital": "Пномпень",
         "population": "15135000",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 82,
@@ -655,7 +655,7 @@
         "imageName": "Cameroon.png",
         "capital": "Яунде",
         "population": "20386799",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 83,
@@ -663,7 +663,7 @@
         "imageName": "Canada.png",
         "capital": "Оттава",
         "population": "35295770",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 84,
@@ -671,7 +671,7 @@
         "imageName": "Kenya.png",
         "capital": "Найроби",
         "population": "44354000",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 85,
@@ -679,7 +679,7 @@
         "imageName": "Cyprus.png",
         "capital": "Никосия",
         "population": "865878",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 86,
@@ -687,7 +687,7 @@
         "imageName": "Kyrgyzstan.png",
         "capital": "Бишкек",
         "population": "5663133",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 87,
@@ -695,7 +695,7 @@
         "imageName": "Kiribati.png",
         "capital": "Южная Тарава",
         "population": "106461",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 88,
@@ -703,7 +703,7 @@
         "imageName": "China.png",
         "capital": "Пекин",
         "population": "13633500",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 89,
@@ -711,7 +711,7 @@
         "imageName": "Colombia.png",
         "capital": "Богота",
         "population": "47506000",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 90,
@@ -719,7 +719,7 @@
         "imageName": "Comory.png",
         "capital": "Морони",
         "population": "743798",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 91,
@@ -727,7 +727,7 @@
         "imageName": "Congo.png",
         "capital": "Браззавиль",
         "population": "4448000",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 92,
@@ -735,7 +735,7 @@
         "imageName": "Cat-dIvoire.png",
         "capital": "Ямусукро",
         "population": "23202000",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 93,
@@ -743,7 +743,7 @@
         "imageName": "Cuba.png",
         "capital": "Гавана",
         "population": "11167325",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 94,
@@ -751,7 +751,7 @@
         "imageName": "Kuwait.png",
         "capital": "Эль-Кувейт",
         "population": "3065850",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 95,
@@ -759,7 +759,7 @@
         "imageName": "Laos.png",
         "capital": "Вьентьян",
         "population": "6580800",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 96,
@@ -767,7 +767,7 @@
         "imageName": "Latvia.png",
         "capital": "Рига",
         "population": "2003900",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 97,
@@ -775,7 +775,7 @@
         "imageName": "Lesotho.png",
         "capital": "Масеру",
         "population": "2074000",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 98,
@@ -783,7 +783,7 @@
         "imageName": "Liberia.png",
         "capital": "Монровия",
         "population": "4294000",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 99,
@@ -791,7 +791,7 @@
         "imageName": "Lebanon.png",
         "capital": "Бейрут",
         "population": "4822000",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 100,
@@ -799,7 +799,7 @@
         "imageName": "Libya.png",
         "capital": "Триполи",
         "population": "6202000",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 101,
@@ -807,7 +807,7 @@
         "imageName": "Lithuania.png",
         "capital": "Вильнюс",
         "population": "2941953",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 102,
@@ -815,7 +815,7 @@
         "imageName": "Liechtenstein.png",
         "capital": "Вадуц",
         "population": "37132",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 103,
@@ -823,7 +823,7 @@
         "imageName": "Luxembourg.png",
         "capital": "Люксембург",
         "population": "537000",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 104,
@@ -831,7 +831,7 @@
         "imageName": "Mauritius.png",
         "capital": "Порт-Луи",
         "population": "1257900",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 105,
@@ -839,7 +839,7 @@
         "imageName": "Mauritania.png",
         "capital": "Нуакшот",
         "population": "3461041",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 106,
@@ -847,7 +847,7 @@
         "imageName": "Madagascar.png",
         "capital": "Антананариву",
         "population": "21263403",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 107,
@@ -855,7 +855,7 @@
         "imageName": "Mautta.png",
         "capital": "Административный центр Мамудзу",
         "population": "212645",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 108,
@@ -863,7 +863,7 @@
         "imageName": "Macau.png",
         "capital": "Столицы нет",
         "population": "541200",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 109,
@@ -871,7 +871,7 @@
         "imageName": "Macedonia.png",
         "capital": "Скопье",
         "population": "2062294",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 110,
@@ -879,7 +879,7 @@
         "imageName": "Malawi.png",
         "capital": "Лилонгве",
         "population": "16363000",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 111,
@@ -887,7 +887,7 @@
         "imageName": "Malaysia.png",
         "capital": "Путраджайя",
         "population": "30041000",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 112,
@@ -895,7 +895,7 @@
         "imageName": "Mali.png",
         "capital": "Бамако",
         "population": "15302000",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 113,
@@ -903,7 +903,7 @@
         "imageName": "Morocco.png",
         "capital": "Рабат",
         "population": "33202300",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 114,
@@ -911,7 +911,7 @@
         "imageName": "Martinique.png",
         "capital": "дминистративный центр Фор-де-Франс",
         "population": "392291",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 115,
@@ -919,7 +919,7 @@
         "imageName": "Marshall Islands.png",
         "capital": "Маджуро",
         "population": "56086",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 116,
@@ -927,7 +927,7 @@
         "imageName": "Mexico.png",
         "capital": "Мехико",
         "population": "11971320",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 117,
@@ -935,7 +935,7 @@
         "imageName": "Mellya.png",
         "capital": "MLАдминистративный центр Мелилья",
         "population": "85584",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 118,
@@ -943,7 +943,7 @@
         "imageName": "Micronesia.png",
         "capital": "Паликир",
         "population": "101351",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 119,
@@ -951,7 +951,7 @@
         "imageName": "Mozambique.png",
         "capital": "Мапуту",
         "population": "23700715",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 120,
@@ -959,7 +959,7 @@
         "imageName": "Moldova.png",
         "capital": "Кишинёв",
         "population": "3559500",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 121,
@@ -967,7 +967,7 @@
         "imageName": "Monaco.png",
         "capital": "Монако",
         "population": "36136",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 122,
@@ -975,7 +975,7 @@
         "imageName": "Mongolia.png",
         "capital": "Улан-Батор",
         "population": "2931300",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 123,
@@ -983,7 +983,7 @@
         "imageName": "Nepal.png",
         "capital": "Катманду",
         "population": "26494504",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 124,
@@ -991,7 +991,7 @@
         "imageName": "Niger.png",
         "capital": "Ниамей",
         "population": "17129076",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 125,
@@ -999,7 +999,7 @@
         "imageName": "Nigeria.png",
         "capital": "Абуджа",
         "population": "17361500",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 126,
@@ -1007,7 +1007,7 @@
         "imageName": "Netherlands Anti.png",
         "capital": "Виллемстад",
         "population": "197041",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 127,
@@ -1015,7 +1015,7 @@
         "imageName": "Netherlands.png",
         "capital": "Амстердам",
         "population": "16842200",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 128,
@@ -1023,7 +1023,7 @@
         "imageName": "Nicaragua.png",
         "capital": "Манагуа",
         "population": "6071045",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 129,
@@ -1031,7 +1031,7 @@
         "imageName": "Niue.png",
         "capital": "Алофи",
         "population": "1611",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 130,
@@ -1039,7 +1039,7 @@
         "imageName": "New Zealand.png",
         "capital": "Веллингтон",
         "population": "4518330",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 131,
@@ -1047,7 +1047,7 @@
         "imageName": "New Caledonia.png",
         "capital": "Нумеа",
         "population": "245580",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 132,
@@ -1055,7 +1055,7 @@
         "imageName": "Norway.png",
         "capital": "Осло",
         "population": "5109056",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 133,
@@ -1063,7 +1063,7 @@
         "imageName": "United Arab Emirates.png",
         "capital": "Абу-Даби",
         "population": "8264070",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 134,
@@ -1071,7 +1071,7 @@
         "imageName": "Oman.png",
         "capital": "Маскат",
         "population": "3957000",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 135,
@@ -1079,7 +1079,7 @@
         "imageName": "Island of Buva.png",
         "capital": "толицы нет",
         "population": "0",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 136,
@@ -1087,7 +1087,7 @@
         "imageName": "Pakistan.png",
         "capital": "Исламабад",
         "population": "18591400",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 137,
@@ -1095,7 +1095,7 @@
         "imageName": "Palau.png",
         "capital": "Нгерулмуд",
         "population": "20901",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 138,
@@ -1103,7 +1103,7 @@
         "imageName": "Palestinian autonomy.png",
         "capital": "Рамалла",
         "population": "2235000",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 139,
@@ -1111,7 +1111,7 @@
         "imageName": "Panama.png",
         "capital": "Панама",
         "population": "3405813",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 140,
@@ -1119,7 +1119,7 @@
         "imageName": "Paraguay.png",
         "capital": "Асунсьон",
         "population": "6783374",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 141,
@@ -1127,7 +1127,7 @@
         "imageName": "Peru.png",
         "capital": "Лима",
         "population": "30475144",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 142,
@@ -1135,7 +1135,7 @@
         "imageName": "Poland.png",
         "capital": "Варшава",
         "population": "38502396",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 143,
@@ -1143,7 +1143,7 @@
         "imageName": "Portugal.png",
         "capital": "Лиссабон",
         "population": "10487289",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 144,
@@ -1151,7 +1151,7 @@
         "imageName": "Puerto Rico.png",
         "capital": "Сан-Хуан",
         "population": "3598356",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 145,
@@ -1159,7 +1159,7 @@
         "imageName": "Romania.png",
         "capital": "Бухарест",
         "population": "20121641",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 146,
@@ -1167,7 +1167,7 @@
         "imageName": "Samoa.png",
         "capital": "Апиа",
         "population": "187820",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 147,
@@ -1175,7 +1175,7 @@
         "imageName": "San Marino.png",
         "capital": "Сан-Марино",
         "population": "33540",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 148,
@@ -1183,7 +1183,7 @@
         "imageName": "San Tome and Principi.png",
         "capital": "Сан-Томе",
         "population": "187356",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 149,
@@ -1191,7 +1191,7 @@
         "imageName": "Saudi Arabia.png",
         "capital": "Эр-Рияд",
         "population": "29994272",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 150,
@@ -1199,7 +1199,7 @@
         "imageName": "Swaziland.png",
         "capital": "Мбабене",
         "population": "1250000",
-        "level": [11]
+        "level": 11
     },
     {
         "id": 151,
@@ -1207,7 +1207,7 @@
         "imageName": "Seychelles.png",
         "capital": "Виктория",
         "population": "90945",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 152,
@@ -1215,7 +1215,7 @@
         "imageName": "Senegal.png",
         "capital": "Дакар",
         "population": "13567338",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 153,
@@ -1223,7 +1223,7 @@
         "imageName": "Saint-Vincent and Grenadines.png",
         "capital": "Кингстаун",
         "population": "109000",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 154,
@@ -1231,7 +1231,7 @@
         "imageName": "Saint-Chits and Nevis.png",
         "capital": "Бастер",
         "population": "54000",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 155,
@@ -1239,7 +1239,7 @@
         "imageName": "Saint-Lusia.png",
         "capital": "Кастри",
         "population": "180000",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 156,
@@ -1247,7 +1247,7 @@
         "imageName": "Serbia.png",
         "capital": "Белград",
         "population": "7181505",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 157,
@@ -1255,7 +1255,7 @@
         "imageName": "Singapore.png",
         "capital": "Сингапур",
         "population": "5399200",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 158,
@@ -1263,7 +1263,7 @@
         "imageName": "Syrian Arab Republic.png",
         "capital": "Дамаск",
         "population": "21898000",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 159,
@@ -1271,7 +1271,7 @@
         "imageName": "Slovakia.png",
         "capital": "Братислава",
         "population": "5415949",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 160,
@@ -1279,7 +1279,7 @@
         "imageName": "Slovenia.png",
         "capital": "Любляна",
         "population": "2061963",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 161,
@@ -1287,7 +1287,7 @@
         "imageName": "USA.png",
         "capital": "Вашингтон",
         "population": "31770600",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 162,
@@ -1295,7 +1295,7 @@
         "imageName": "Solomon islands.png",
         "capital": "Хониара",
         "population": "581344",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 163,
@@ -1303,7 +1303,7 @@
         "imageName": "Somalia.png",
         "capital": "Могадишо",
         "population": "10496000",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 164,
@@ -1311,7 +1311,7 @@
         "imageName": "Sudan.png",
         "capital": "Хартум",
         "population": "37964000",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 165,
@@ -1319,7 +1319,7 @@
         "imageName": "Surinam.png",
         "capital": "Парамарибо",
         "population": "534189",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 166,
@@ -1327,7 +1327,7 @@
         "imageName": "Sierra Leone.png",
         "capital": "Фритаун",
         "population": "6190280",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 167,
@@ -1335,7 +1335,7 @@
         "imageName": "Tajikistan.png",
         "capital": "Душанбе",
         "population": "8160000",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 168,
@@ -1343,7 +1343,7 @@
         "imageName": "Thailand.png",
         "capital": "Бангкок",
         "population": "65926261",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 169,
@@ -1351,7 +1351,7 @@
         "imageName": "Taiwan.png",
         "capital": "Тайбэй",
         "population": "23379129",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 170,
@@ -1359,7 +1359,7 @@
         "imageName": "Tanzania.png",
         "capital": "Додома",
         "population": "44928923",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 171,
@@ -1367,7 +1367,7 @@
         "imageName": "Timor-Leste.png",
         "capital": "Дили",
         "population": "1066409",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 172,
@@ -1375,7 +1375,7 @@
         "imageName": "Togo.png",
         "capital": "Ломе",
         "population": "6191155",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 173,
@@ -1383,7 +1383,7 @@
         "imageName": "Trinidad and Tobago.png",
         "capital": "Порт-оф-Спейн",
         "population": "1328019",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 174,
@@ -1391,7 +1391,7 @@
         "imageName": "Tuvalu.png",
         "capital": "Фунафути",
         "population": "11323",
-        "level": [12]
+        "level": 12
     },
     {
         "id": 175,
@@ -1399,7 +1399,7 @@
         "imageName": "Tunisia.png",
         "capital": "Тунис",
         "population": "10886500",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 176,
@@ -1407,7 +1407,7 @@
         "imageName": "Turkmenistan.png",
         "capital": "Ашхабад",
         "population": "5240000",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 177,
@@ -1415,7 +1415,7 @@
         "imageName": "Turkiye.png",
         "capital": "Анкара",
         "population": "76667864",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 178,
@@ -1423,7 +1423,7 @@
         "imageName": "Uganda.png",
         "capital": "Кампала",
         "population": "35357000",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 179,
@@ -1431,7 +1431,7 @@
         "imageName": "Uzbekistan.png",
         "capital": "Ташкент",
         "population": "30183400",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 180,
@@ -1439,7 +1439,7 @@
         "imageName": "Ukraine.png",
         "capital": "Киев",
         "population": "45426200",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 181,
@@ -1447,7 +1447,7 @@
         "imageName": "Uruguay.png",
         "capital": "Монтевидео",
         "population": "3286314",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 182,
@@ -1455,7 +1455,7 @@
         "imageName": "Faroe islands.png",
         "capital": "Торсхавн",
         "population": "49291",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 183,
@@ -1463,7 +1463,7 @@
         "imageName": "Fiji.png",
         "capital": "Сува",
         "population": "858038",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 184,
@@ -1471,7 +1471,7 @@
         "imageName": "Philippines.png",
         "capital": "Манила",
         "population": "99275100",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 185,
@@ -1479,7 +1479,7 @@
         "imageName": "Finland.png",
         "capital": "Хельсинки",
         "population": "5452821",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 186,
@@ -1487,7 +1487,7 @@
         "imageName": "France.png",
         "capital": "Париж",
         "population": "65844000",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 187,
@@ -1495,7 +1495,7 @@
         "imageName": "Chad.png",
         "capital": "Нджамена",
         "population": "12825000",
-        "level": [8]
+        "level": 8
     },
     {
         "id": 188,
@@ -1503,7 +1503,7 @@
         "imageName": "Montenegro.png",
         "capital": "Подгорица",
         "population": "620029",
-        "level": [5]
+        "level": 5
     },
     {
         "id": 189,
@@ -1511,7 +1511,7 @@
         "imageName": "Czech.png",
         "capital": "Прага",
         "population": "10513800",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 190,
@@ -1519,7 +1519,7 @@
         "imageName": "Chile.png",
         "capital": "Сантьяго",
         "population": "16341929",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 191,
@@ -1527,7 +1527,7 @@
         "imageName": "Switzerland.png",
         "capital": "Берн",
         "population": "8112200",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 192,
@@ -1535,7 +1535,7 @@
         "imageName": "Sweden.png",
         "capital": "Стокгольм",
         "population": "9651531",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 193,
@@ -1543,7 +1543,7 @@
         "imageName": "Equatorial Guinea.png",
         "capital": "Малабо",
         "population": "736296",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 194,
@@ -1551,7 +1551,7 @@
         "imageName": "El Salvador.png",
         "capital": "Сан-Сальвадор",
         "population": "6340000",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 195,
@@ -1559,7 +1559,7 @@
         "imageName": "Eritrea.png",
         "capital": "Асмэра",
         "population": "6333000",
-        "level": [10]
+        "level": 10
     },
     {
         "id": 196,
@@ -1567,7 +1567,7 @@
         "imageName": "Estonia.png",
         "capital": "Таллин",
         "population": "1311870",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 197,
@@ -1575,7 +1575,7 @@
         "imageName": "Ethiopia.png",
         "capital": "Аддис-Абеба",
         "population": "86613986",
-        "level": [6]
+        "level": 6
     },
     {
         "id": 198,
@@ -1583,7 +1583,7 @@
         "imageName": "South Africa.png",
         "capital": "Претория",
         "population": "52981991",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 199,
@@ -1591,7 +1591,7 @@
         "imageName": "South Sudan.png",
         "capital": "Джуба",
         "population": "10625176",
-        "level": [9]
+        "level": 9
     },
     {
         "id": 200,
@@ -1599,7 +1599,7 @@
         "imageName": "Jamaica.png",
         "capital": "Кингстон",
         "population": "2711476",
-        "level": [7]
+        "level": 7
     },
     {
         "id": 201,
@@ -1607,7 +1607,7 @@
         "imageName": "Japan.png",
         "capital": "Токио",
         "population": "12718000",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 202,
@@ -1615,7 +1615,7 @@
         "imageName": "Russian.png",
         "capital": "Москва",
         "population": "14698006",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 203,
@@ -1623,7 +1623,7 @@
         "imageName": "Avstrl.jpg",
         "capital": "Канберра",
         "population": "26000000",
-        "level": [1, 2]
+        "level": 1
     },
     {
         "id": 204,
@@ -1631,7 +1631,7 @@
         "imageName": "fea86789e3dbebae24f67e6809a51b55.png",
         "capital": "Сеул",
         "population": "51996948",
-        "level": [1]
+        "level": 1
     },
     {
         "id": 205,
@@ -1639,7 +1639,7 @@
         "imageName": "Flag_of_Croatia.png",
         "capital": "Загреб",
         "population": "4188853",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 206,
@@ -1647,7 +1647,7 @@
         "imageName": "e243296457c2f5913c9ff1d2128ca34a.jpg",
         "capital": "Вена",
         "population": "1973403",
-        "level": [2]
+        "level": 2
     },
     {
         "id": 207,
@@ -1655,7 +1655,7 @@
         "imageName": "Flag_of_South_Africa.png",
         "capital": "Претория, Кейптаун, Блумфонтейн",
         "population": "58048332",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 208,
@@ -1663,7 +1663,7 @@
         "imageName": "756697087308827.jpg",
         "capital": "Кито",
         "population": "2011388",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 209,
@@ -1671,7 +1671,7 @@
         "imageName": "2560x1280_534605.jpg",
         "capital": "Коломбо",
         "population": "22181000",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 210,
@@ -1679,7 +1679,7 @@
         "imageName": "england.jpg",
         "capital": "Лондон",
         "population": " 56286961",
-        "level": [3]
+        "level": 3
     },
     {
         "id": 211,
@@ -1687,7 +1687,7 @@
         "imageName": "Morocco-Flag-8.jpg",
         "capital": "Рабат",
         "population": "37984655",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 212,
@@ -1695,7 +1695,7 @@
         "imageName": "Flag_of_Scotland.png",
         "capital": "Эдинбург",
         "population": "5438000",
-        "level": [4]
+        "level": 4
     },
     {
         "id": 213,
@@ -1703,6 +1703,6 @@
         "imageName": "maxresdefault.jpg",
         "capital": "Мале",
         "population": "379270",
-        "level": [5]
+        "level": 5
     }
 ]
