@@ -78,7 +78,7 @@
         "capital": "толицы нет",
         "population": "0",
         "level": 12,
-        "similar": []
+        "similar": [85]
     },
 
     {
@@ -616,7 +616,7 @@
         "capital": "Иерусалим",
         "population": "8146300",
         "level": 2,
-        "similar": []
+        "similar": [31, 51, 177, 181, 211]
     },
     {
         "id": 69,
@@ -690,7 +690,7 @@
         "capital": "Мадрид",
         "population": "46609700",
         "level": 1,
-        "similar": []
+        "similar": [12, 22, 99, 187, 208]
     },
     {
         "id": 77,
@@ -735,7 +735,7 @@
         "capital": "Пномпень",
         "population": "15135000",
         "level": 12,
-        "similar": [5, 88, 38, 52, 108, 95, 56, 201]
+        "similar": [9, 5, 88, 38, 52, 108, 95, 56, 201]
     },
     {
         "id": 82,
@@ -744,7 +744,7 @@
         "capital": "Яунде",
         "population": "20386799",
         "level": 5,
-        "similar": []
+        "similar": [99, 100, 96, 116]
     },
     {
         "id": 83,
@@ -771,7 +771,7 @@
         "capital": "Никосия",
         "population": "865878",
         "level": 6,
-        "similar": []
+        "similar": [9]
     },
     {
         "id": 86,
@@ -874,7 +874,7 @@
         "capital": "Рига",
         "population": "2003900",
         "level": 5,
-        "similar": []
+        "similar": [99, 100, 82, 116]
     },
     {
         "id": 97,
@@ -892,7 +892,7 @@
         "capital": "Монровия",
         "population": "4294000",
         "level": 8,
-        "similar": []
+        "similar": [164, 174, 161]
     },
     {
         "id": 99,
@@ -901,7 +901,7 @@
         "capital": "Бейрут",
         "population": "4822000",
         "level": 4,
-        "similar": []
+        "similar": [100, 96, 82, 116]
     },
     {
         "id": 100,
@@ -910,7 +910,7 @@
         "capital": "Триполи",
         "population": "6202000",
         "level": 5,
-        "similar": []
+        "similar": [99, 96, 82, 116]
     },
     {
         "id": 101,
@@ -946,7 +946,7 @@
         "capital": "Порт-Луи",
         "population": "1257900",
         "level": 10,
-        "similar": []
+        "similar": [43, 46, 112, 178]
     },
     {
         "id": 105,
@@ -955,7 +955,7 @@
         "capital": "Нуакшот",
         "population": "3461041",
         "level": 8,
-        "similar": []
+        "similar": [74, 125, 163, 165, 176, 179]
     },
     {
         "id": 106,
@@ -1040,7 +1040,7 @@
         "capital": "дминистративный центр Фор-де-Франс",
         "population": "392291",
         "level": 12,
-        "similar": []
+        "similar": [181, 182, 212]
     },
     {
         "id": 115,
@@ -1049,7 +1049,7 @@
         "capital": "Маджуро",
         "population": "56086",
         "level": 10,
-        "similar": []
+        "similar": [151]
     },
     {
         "id": 116,
@@ -1058,7 +1058,7 @@
         "capital": "Мехико",
         "population": "11971320",
         "level": 2,
-        "similar": []
+        "similar": [99, 100, 96, 82]
     },
     {
         "id": 117,
@@ -1076,7 +1076,7 @@
         "capital": "Паликир",
         "population": "101351",
         "level": 12,
-        "similar": []
+        "similar": [194, 168, 146, 144]
     },
     {
         "id": 119,
@@ -1085,7 +1085,7 @@
         "capital": "Мапуту",
         "population": "23700715",
         "level": 9,
-        "similar": []
+        "similar": [213, 171, 164, 114]
     },
     {
         "id": 120,
@@ -1094,7 +1094,7 @@
         "capital": "Кишинёв",
         "population": "3559500",
         "level": 7,
-        "similar": []
+        "similar": [116, 104, 89]
     },
     {
         "id": 121,
@@ -1269,7 +1269,7 @@
         "capital": "Панама",
         "population": "3405813",
         "level": 5,
-        "similar": []
+        "similar": [190, 140, 144, 159, 160, 189]
     },
     {
         "id": 140,
@@ -1278,7 +1278,7 @@
         "capital": "Асунсьон",
         "population": "6783374",
         "level": 6,
-        "similar": []
+        "similar": [139, 144, 159, 160, 189, 190]
     },
     {
         "id": 141,
@@ -1287,7 +1287,7 @@
         "capital": "Лима",
         "population": "30475144",
         "level": 4,
-        "similar": []
+        "similar": [18, 19, 54]
     },
     {
         "id": 142,
@@ -1314,7 +1314,7 @@
         "capital": "Сан-Хуан",
         "population": "3598356",
         "level": 7,
-        "similar": []
+        "similar": [194, 168, 118, 144]
     },
     {
         "id": 145,
@@ -1332,7 +1332,7 @@
         "capital": "Апиа",
         "population": "187820",
         "level": 10,
-        "similar": []
+        "similar": [194, 168, 118, 144]
     },
     {
         "id": 147,
@@ -1350,7 +1350,7 @@
         "capital": "Сан-Томе",
         "population": "187356",
         "level": 12,
-        "similar": []
+        "similar": [15, 34, 66]
     },
     {
         "id": 149,
@@ -1368,7 +1368,7 @@
         "capital": "Мбабене",
         "population": "1250000",
         "level": 11,
-        "similar": []
+        "similar": [3, 84, 94]
     },
     {
         "id": 151,
@@ -1377,7 +1377,7 @@
         "capital": "Виктория",
         "population": "90945",
         "level": 10,
-        "similar": []
+        "similar": [115]
     },
     {
         "id": 152,
@@ -1431,7 +1431,7 @@
         "capital": "Сингапур",
         "population": "5399200",
         "level": 2,
-        "similar": []
+        "similar": [1, 66, 88]
     },
     {
         "id": 158,
@@ -1449,7 +1449,7 @@
         "capital": "Братислава",
         "population": "5415949",
         "level": 6,
-        "similar": []
+        "similar": [139, 140, 144, 160, 189, 190]
     },
     {
         "id": 160,
@@ -1458,7 +1458,7 @@
         "capital": "Любляна",
         "population": "2061963",
         "level": 3,
-        "similar": []
+        "similar": [139, 140, 144, 159, 189, 190]
     },
     {
         "id": 161,
@@ -1467,7 +1467,7 @@
         "capital": "Вашингтон",
         "population": "31770600",
         "level": 1,
-        "similar": []
+        "similar": [98, 164, 174]
     },
     {
         "id": 162,
@@ -1494,7 +1494,7 @@
         "capital": "Хартум",
         "population": "37964000",
         "level": 7,
-        "similar": []
+        "similar": [98, 174, 161]
     },
     {
         "id": 165,
@@ -1530,7 +1530,7 @@
         "capital": "Бангкок",
         "population": "65926261",
         "level": 3,
-        "similar": []
+        "similar": [194, 118, 146, 144]
     },
     {
         "id": 169,
@@ -1586,7 +1586,7 @@
         "capital": "Фунафути",
         "population": "11323",
         "level": 12,
-        "similar": []
+        "similar": [98, 164, 161]
     },
     {
         "id": 175,
@@ -1707,7 +1707,7 @@
         "capital": "Нджамена",
         "population": "12825000",
         "level": 8,
-        "similar": []
+        "similar": [12, 22, 99, 76, 208]
     },
     {
         "id": 188,
@@ -1725,7 +1725,7 @@
         "capital": "Прага",
         "population": "10513800",
         "level": 2,
-        "similar": []
+        "similar": [139, 140, 144, 159, 160, 190]
     },
     {
         "id": 190,
@@ -1734,7 +1734,7 @@
         "capital": "Сантьяго",
         "population": "16341929",
         "level": 3,
-        "similar": []
+        "similar": [139, 140, 144, 159, 160, 189]
     },
     {
         "id": 191,
@@ -1743,7 +1743,7 @@
         "capital": "Берн",
         "population": "8112200",
         "level": 1,
-        "similar": []
+        "similar": [56, 192, 185, 55, 132, 58, 2, 62, 61, 126, 135, 182]
     },
     {
         "id": 192,
@@ -1761,7 +1761,7 @@
         "capital": "Малабо",
         "population": "736296",
         "level": 10,
-        "similar": []
+        "similar": [15, 25, 53, 154, 69, 41]
     },
     {
         "id": 194,
@@ -1770,7 +1770,7 @@
         "capital": "Сан-Сальвадор",
         "population": "6340000",
         "level": 6,
-        "similar": []
+        "similar": [168, 118, 146, 144]
     },
     {
         "id": 195,
@@ -1923,7 +1923,7 @@
         "capital": "Рабат",
         "population": "37984655",
         "level": 4,
-        "similar": [211]
+        "similar": [68]
     },
     {
         "id": 212,

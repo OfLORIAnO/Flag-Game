@@ -29,7 +29,7 @@ export const getLevelList = (allData, level) => {
         while (otherLevelFilteredData.length < 5) {
             let randomNum = Math.floor(Math.random() * 2);
             if (level == 1) {
-                randomNum += 1;
+                randomNum = 1;
             } else if (1 < level && level < 12) {
                 if (randomNum === 0) {
                     randomNum = -1;

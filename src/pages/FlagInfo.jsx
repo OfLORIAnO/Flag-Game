@@ -3,12 +3,20 @@ import FlagImg from '../assets/flag.png';
 import Header from '../components/Header';
 import s from './FlagInfo.module.scss';
 import Search from '../components/Search';
-import { useSelector } from 'react-redux';
-import { selectAllData, selectFiltered } from '../redux/Slices/DataSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    filterData,
+    selectAllData,
+    selectFiltered,
+} from '../redux/Slices/DataSlice';
 import InfoFlagItem from '../components/InfoFlagItem';
 function FlagInfo() {
     const data = useSelector(selectAllData);
     const filterValue = useSelector(selectFiltered);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(filterData(''));
+    }, []);
     const renderData = () => {
         if (filterValue) {
             return data
