@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     correctAns,
     resetGame,
@@ -23,9 +23,11 @@ import PopulationImg from '../assets/population.png';
 
 import s from './Game.module.scss';
 import { formatNumber } from '../utils/FormatNumber';
-import { current } from '@reduxjs/toolkit';
+import { GetVariants } from '../utils/GameFuncs';
+import { selectAllData } from '../redux/Slices/DataSlice';
 
 function Game() {
+    const [variants, setVariants] = useState([]);
     const dispatch = useDispatch();
     const goToPrepareGame = () => {
         dispatch(resetGame());
@@ -35,10 +37,15 @@ function Game() {
         dispatch(correctAns());
     };
 
+    const allData = useSelector(selectAllData);
     const levelList = useSelector(selectLevelList);
     const level = useSelector(selectCurrentLevel);
     const currentObject = useSelector(selectCurrentObject);
     const step = useSelector(selectCurrentStep);
+
+    useEffect(() => {
+        setVariants(GetVariants(allData, currentObject));
+    }, [step]);
 
     const itilsItems = () => {
         return (
@@ -56,6 +63,14 @@ function Game() {
         );
     };
 
+    const isCorrect = (ansId) => {
+        if (currentObject.id === ansId) {
+            correct();
+        } else {
+            alert('Неверно');
+            correct();
+        }
+    };
     if (currentObject) {
         return (
             <div className={s.game}>
@@ -106,42 +121,21 @@ function Game() {
                 <div className={s.content}>
                     <h2 className={s.title}>{currentObject.name}</h2>
                     <div className={s.flags}>
-                        <button
-                            className={s.flag_container}
-                            onClick={() => correct()}
-                        >
-                            <img
-                                src={'./flagsImg/' + currentObject.imageName}
-                                alt={'Flag Image'}
-                            />
-                        </button>
-                        <button
-                            className={s.flag_container}
-                            onClick={() => correct()}
-                        >
-                            <img
-                                src={'./flagsImg/' + currentObject.imageName}
-                                alt={'Flag Image'}
-                            />
-                        </button>
-                        <button
-                            className={s.flag_container}
-                            onClick={() => correct()}
-                        >
-                            <img
-                                src={'./flagsImg/' + currentObject.imageName}
-                                alt={'Flag Image'}
-                            />
-                        </button>
-                        <button
-                            className={s.flag_container}
-                            onClick={() => correct()}
-                        >
-                            <img
-                                src={'./flagsImg/' + currentObject.imageName}
-                                alt={'Flag Image'}
-                            />
-                        </button>
+                        {variants &&
+                            variants.map((item) => {
+                                return (
+                                    <button
+                                        key={item.id}
+                                        className={s.flag_container}
+                                        onClick={() => isCorrect(item.id)}
+                                    >
+                                        <img
+                                            src={'./flagsImg/' + item.imageName}
+                                            alt={'Flag Image'}
+                                        />
+                                    </button>
+                                );
+                            })}
                     </div>
                 </div>
             </div>
