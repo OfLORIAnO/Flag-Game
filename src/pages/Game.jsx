@@ -22,6 +22,9 @@ function Game() {
         dispatch(resetGame());
         dispatch(changePage('gamePrepare'));
     };
+    const correct = () => {
+        dispatch(correctAns());
+    };
     const levelList = useSelector(selectLevelList);
     const level = useSelector(selectCurrentLevel);
     const currentObject = useSelector(selectCurrentObject);
@@ -54,9 +57,7 @@ function Game() {
                     {levelList.length && levelList.indexOf(currentObject) + 1}
                     /20
                 </h1>
-                <button onClick={() => dispatch(correctAns())}>
-                    Следующий вопрос
-                </button>
+                <button onClick={() => correct()}>Следующий вопрос</button>
             </div>
         );
     }

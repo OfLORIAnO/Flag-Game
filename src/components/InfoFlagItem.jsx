@@ -23,7 +23,7 @@ function InfoFlagItem({ item }) {
                         </h2>
                         <h2>
                             Население:{' '}
-                            <span>{formatNumber(item.population)} </span>
+                            <span>{formatNumber(item.population)}</span>
                         </h2>
                     </div>
                 </div>

@@ -37,7 +37,9 @@ function FlagInfo() {
         <>
             <Header title={'Все флаги'} imgSource={FlagImg} moveTo={'home'} />
             {/* {data.map((item) => (
-                <span>{item.name}, </span>
+                <span>
+                    {item.id} - {item.name},
+                </span>
             ))} */}
             <div className={s.wrapper}>
                 <Search />
