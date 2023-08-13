@@ -15,6 +15,11 @@ function InfoFlagItem({ item }) {
                     </div>
 
                     <div className={s.info}>
+                        <h2>{item.id}</h2>
+                        <h2>
+                            {item.similar.length &&
+                                item.similar.map((num) => <span>{num}, </span>)}
+                        </h2>
                         <h2>
                             Страна: <span>{item.name}</span>
                         </h2>

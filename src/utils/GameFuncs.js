@@ -1,3 +1,15 @@
+function shuffleArray(array) {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledArray[i], shuffledArray[j]] = [
+            shuffledArray[j],
+            shuffledArray[i],
+        ];
+    }
+    return shuffledArray;
+}
+
 export const getLevelList = (allData, level) => {
     let currentLevelFilteredData = allData.filter(
         (item) => item.level === level
@@ -34,7 +46,11 @@ export const getLevelList = (allData, level) => {
                 otherLevelFilteredData.push(DataRandElem);
             }
         }
-        currentLevelFilteredData = currentLevelFilteredData.concat(otherLevelFilteredData)
-        return currentLevelFilteredData;
+        currentLevelFilteredData = currentLevelFilteredData.concat(
+            otherLevelFilteredData
+        );
+        const shuffledArray = shuffleArray(currentLevelFilteredData);
+        console.log(shuffledArray);
+        return shuffledArray;
     }
 };
