@@ -5,7 +5,10 @@ $secondary: #6252c5;
 $font-color: #fff;
 $background: #303030;
 $box-shadow: 0 4px rgba(119, 97, 255, 0.25);
-
+$disabled: rgba(
+    $color: #6252c5,
+    $alpha: 0.6,
+);
 // .wrapper {
 //     padding: 0 40px 10px 40px;
 //     margin: 0 auto;

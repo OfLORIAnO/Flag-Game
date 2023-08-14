@@ -1,0 +1,41 @@
+{
+    "totalScore": 13,
+    "flags": [
+        {
+            "score": [
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 }
+            ],
+            "currentLevel": 5
+        }
+    ],
+    "capital": [
+        {
+            "score": [
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 },
+                { "current": 512, "max": 680 }
+            ],
+            "currentLevel": 5
+        }
+    ]
+}

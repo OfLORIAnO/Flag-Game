@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import {
     correctAns,
+    incorrectAns,
     resetGame,
     selectCurrentLevel,
     selectCurrentObject,
     selectCurrentStep,
     selectLevelList,
+    selectLives,
+    timeOut,
 } from '../redux/Slices/GameSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { changePage } from '../redux/Slices/PagesSlice';
@@ -25,16 +28,29 @@ import s from './Game.module.scss';
 import { formatNumber } from '../utils/FormatNumber';
 import { GetVariants } from '../utils/GameFuncs';
 import { selectAllData } from '../redux/Slices/DataSlice';
+import VarianGame from '../components/VarianGame';
 
 function Game() {
     const [variants, setVariants] = useState([]);
+    const [wasCorrect, setWasCorrect] = useState(false);
     const dispatch = useDispatch();
+
     const goToPrepareGame = () => {
         dispatch(resetGame());
         dispatch(changePage('gamePrepare'));
     };
-    const correct = () => {
+    const doCorrect = () => {
         dispatch(correctAns());
+        setWasCorrect(false);
+        console.log(wasCorrect);
+    };
+    const correct = () => {
+        setWasCorrect(true);
+        console.log(wasCorrect);
+        setTimeout(doCorrect, 1000);
+    };
+    const incorrect = () => {
+        dispatch(incorrectAns());
     };
 
     const allData = useSelector(selectAllData);
@@ -42,72 +58,64 @@ function Game() {
     const level = useSelector(selectCurrentLevel);
     const currentObject = useSelector(selectCurrentObject);
     const step = useSelector(selectCurrentStep);
+    const lives = useSelector(selectLives);
 
     useEffect(() => {
-        setVariants(GetVariants(allData, currentObject));
+        currentObject && setVariants(GetVariants(allData, currentObject));
     }, [step]);
+    useEffect(() => {
+        lives === 0 && goToPrepareGame();
+    }, [lives]);
 
-    const itilsItems = () => {
-        return (
-            <>
-                <img
-                    src={'./flagsImg/' + currentObject.imageName}
-                    alt='Flag Image'
-                />
-                <h1>
-                    {levelList.length && levelList.indexOf(currentObject) + 1}
-                    /20
-                </h1>
-                <button>Следующий вопрос</button>
-            </>
-        );
-    };
-
-    const isCorrect = (ansId) => {
-        if (currentObject.id === ansId) {
-            correct();
-        } else {
-            alert('Неверно');
-            correct();
+    const renderLivs = () => {
+        const livesArray = [];
+        for (let i = 0; i < lives; i++) {
+            livesArray.push(
+                <img key={i} src={LifeImg} alt={`${lives} Life`} />
+            );
         }
+        return livesArray;
     };
+    const timerOut = () => {
+        dispatch(timeOut());
+    };
+
     if (currentObject) {
         return (
             <div className={s.game}>
-                <header className={s.header}>
-                    <div className={s.header_left}>
-                        <button
-                            className={s.changePage}
-                            onClick={() => goToPrepareGame()}
-                        >
-                            <img src={backImg} alt='Button Back' />
-                        </button>
-                        <div className={s.lives}>
-                            <img src={LifeImg} alt='1 life' />
-                            <img src={LifeImg} alt='2 life' />
-                            <img src={LifeImg} alt='3 life' />
+                <div className={s.header__container}>
+                    <header className={s.header}>
+                        <div className={s.header_left}>
+                            <button
+                                className={s.changePage}
+                                onClick={() => goToPrepareGame()}
+                            >
+                                <img src={backImg} alt='Button Back' />
+                            </button>
+                            <div className={s.lives}>{renderLivs()}</div>
                         </div>
-                    </div>
-                    <h1>Уровень {level}</h1>
-                    <div className={s.header_right}>
-                        <button className={s.sound}>
-                            <img src={SoundImg} alt='' />
-                        </button>
-                        <CountdownCircleTimer
-                            key={step}
-                            isPlaying={true}
-                            size={40}
-                            strokeWidth={3}
-                            colors={'#fff'}
-                            trailColor={'#fff'}
-                            trailStrokeWidth={1}
-                            duration={20}
-                            onComplete={() => console.log('Время вышло')}
-                        >
-                            {({ remainingTime }) => remainingTime}
-                        </CountdownCircleTimer>
-                    </div>
-                </header>
+                        <h1>Уровень {level}</h1>
+                        <div className={s.header_right}>
+                            <button className={s.sound}>
+                                <img src={SoundImg} alt='' />
+                            </button>
+                            <CountdownCircleTimer
+                                key={step}
+                                isPlaying={true}
+                                size={40}
+                                strokeWidth={3}
+                                colors={'#fff'}
+                                trailColor={'#fff'}
+                                trailStrokeWidth={1}
+                                duration={20}
+                                // onComplete={() => timerOut()}
+                            >
+                                {({ remainingTime }) => remainingTime}
+                            </CountdownCircleTimer>
+                        </div>
+                    </header>
+                </div>
+
                 <div className={s.info}>
                     <div className={s.capital}>
                         <img src={CapitalImg} alt='Capital Icon' />
@@ -118,28 +126,38 @@ function Game() {
                         <img src={PopulationImg} alt='Population Icon' />
                     </div>
                 </div>
+                <div className={s.progress}>
+                    <div className={s.out}>
+                        <div
+                            className={s.bar}
+                            style={{ width: `${(step / 20) * 100}%` }}
+                        ></div>
+                    </div>
+                </div>
                 <div className={s.content}>
-                    <h2 className={s.title}>{currentObject.name}</h2>
+                    <h2
+                        className={s.title}
+                        style={{ color: wasCorrect ? '#229D01' : '#6252c5' }}
+                    >
+                        {currentObject.name}
+                    </h2>
                     <div className={s.flags}>
                         {variants &&
                             variants.map((item) => {
                                 return (
-                                    <button
+                                    <VarianGame
                                         key={item.id}
-                                        className={s.flag_container}
-                                        onClick={() => isCorrect(item.id)}
-                                    >
-                                        <img
-                                            src={'./flagsImg/' + item.imageName}
-                                            alt={'Flag Image'}
-                                        />
-                                    </button>
+                                        item={item}
+                                        correct={correct}
+                                    />
                                 );
                             })}
                     </div>
                 </div>
             </div>
         );
+    } else {
+        goToPrepareGame();
     }
 }
 

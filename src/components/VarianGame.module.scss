@@ -1,0 +1,54 @@
+@import '../settings.scss';
+.flag_container {
+    position: relative;
+    background: none;
+    border: none;
+    padding: 10px;
+    &[disabled] {
+        cursor: default;
+        span {
+            display: flex;
+            z-index: 5;
+        }
+        img {
+            animation-name: Image-Incorrect;
+            animation-duration: 0.7s;
+            animation-iteration-count: 1;
+            opacity: 0.6;
+        }
+    }
+    span {
+        position: absolute;
+        margin: 5px 0px 0px 0px;
+        right: 20px;
+        align-items: center;
+        justify-content: center;
+        background: purple;
+        padding: 5px;
+        border-radius: 10px;
+        color: $font-color;
+        font-weight: 500;
+        font-size: 14px;
+        display: none;
+    }
+    img {
+        border-radius: 10px;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+//Button incorrect animation on disabled
+@keyframes Image-Incorrect {
+    0% {
+        opacity: 1;
+        filter: drop-shadow(0 0 10px rgba($color: red, $alpha: 1));
+    }
+    20% {
+        opacity: 0.6;
+    }
+    100% {
+        filter: drop-shadow(0 0 10px rgba($color: red, $alpha: 0));
+    }
+}
+@keyframes Button-Incorrect {
+}

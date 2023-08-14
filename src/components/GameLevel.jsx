@@ -1,16 +1,11 @@
 import React from 'react';
 import s from './GameLevel.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    selectLevelList,
-    setCurrentLevel,
-    setLevelList,
-    setStartGame,
-} from '../redux/Slices/GameSlice';
+import { selectLevelList, setCurrentLevel, setLevelList, setStartGame } from '../redux/Slices/GameSlice';
 import { changePage } from '../redux/Slices/PagesSlice';
 import { selectAllData } from '../redux/Slices/DataSlice';
 import { getLevelList } from '../utils/GameFuncs';
-function GameLevel({ imageSrc, level, title }) {
+function GameLevel({ imageSrc, level, title, disabledStatus }) {
     const dispatch = useDispatch();
     const allItems = useSelector(selectAllData); // весь массив данных
     const levelList = useSelector(selectLevelList);
@@ -22,7 +17,7 @@ function GameLevel({ imageSrc, level, title }) {
     };
 
     return (
-        <button className={s.gameLevel} onClick={() => startGame()}>
+        <button disabled={disabledStatus} className={s.gameLevel} onClick={() => startGame()}>
             <div className={s.image}>
                 <img src={imageSrc} alt='Image' />
             </div>
