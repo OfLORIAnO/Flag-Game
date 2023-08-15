@@ -8,6 +8,7 @@ import {
     selectCurrentStep,
     selectLevelList,
     selectLives,
+    selectMaxCurrentScore,
     timeOut,
 } from '../redux/Slices/GameSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,7 +23,7 @@ import backImg from '../assets/back.png';
 import FlagImg from '../assets/flag.png';
 import LifeImg from '../assets/life.png';
 import SoundImg from '../assets/sound.png';
-import { ImgMass } from '../utils/Src';
+import { ImgMass } from '../utils/ImageSrc';
 import s from './Game.module.scss';
 import { formatNumber } from '../utils/FormatNumber';
 import { GetVariants } from '../utils/GameFuncs';
@@ -33,6 +34,7 @@ function Game() {
     const dispatch = useDispatch();
     const [variants, setVariants] = useState([]);
     const [wasCorrect, setWasCorrect] = useState(false);
+    const [showGreen, setShowGreen] = useState(false);
     const [isLastQuestion, setIsLastQuestion] = useState(false);
     const [isTimerPlaying, setIsTimerPlaying] = useState(true);
 
@@ -50,29 +52,42 @@ function Game() {
 
     const correct = () => {
         setIsTimerPlaying(false);
+
         const doCorrect = () => {
             dispatch(correctAns());
-            setWasCorrect(false);
+            !isLastQuestion && setWasCorrect(false);
             setIsTimerPlaying(true);
+            setShowGreen(false);
         };
         setWasCorrect(true);
+        setShowGreen(true);
         if (isLastQuestion) {
             //! тут что-то сделать короче чтоб победа была в этом как там его аааа в редуксе добавь "win" там
         }
         setTimeout(doCorrect, 1000);
     };
     const incorrect = () => {
-        dispatch(incorrectAns());
+        const lastLive = () => {
+            setWasCorrect(true);
+            setIsTimerPlaying(false);
+        };
+        const doIncorrect = () => {
+            dispatch(incorrectAns());
+        };
+        lives == 1 && lastLive();
+        setTimeout(doIncorrect, 1000);
     };
+
+    useEffect(() => {
+        currentObject && setVariants(GetVariants(allData, currentObject));
+    }, [step]);
     useEffect(() => {
         step === levelList.length - 1 && setIsLastQuestion(true);
     }, [step]);
     useEffect(() => {
         isLastQuestion && GameWin();
     }, [step]);
-    useEffect(() => {
-        currentObject && setVariants(GetVariants(allData, currentObject));
-    }, [step]);
+
     useEffect(() => {
         lives === 0 && GameOver();
     }, [lives]);
@@ -84,6 +99,7 @@ function Game() {
         dispatch(changePage('lose'));
     };
     const GameWin = () => {
+        console.log('win was');
         dispatch(changePage('win'));
     };
 
@@ -101,17 +117,7 @@ function Game() {
         return (
             variants &&
             variants.map((item) => {
-                return (
-                    <FlagsVarianGame
-                        isTimerPlaying={isTimerPlaying}
-                        setIsTimerPlaying={setIsTimerPlaying}
-                        setWasCorrect={setWasCorrect}
-                        allDisabled={wasCorrect}
-                        key={item.id}
-                        item={item}
-                        correct={correct}
-                    />
-                );
+                return <FlagsVarianGame allDisabled={wasCorrect} key={item.id} item={item} correct={correct} incorrect={incorrect} />;
             })
         );
     };
@@ -143,7 +149,7 @@ function Game() {
                                 trailColor={'#fff'}
                                 trailStrokeWidth={1}
                                 duration={20}
-                                // onComplete={() => timerOut()}
+                                onComplete={() => timerOut()}
                             >
                                 {({ remainingTime }) => remainingTime}
                             </CountdownCircleTimer>
@@ -167,7 +173,7 @@ function Game() {
                     </div>
                 </div>
                 <div className={s.content}>
-                    <h2 className={s.title} style={{ color: wasCorrect ? '#229D01' : '#6252c5' }}>
+                    <h2 className={s.title} style={{ color: showGreen ? '#229D01' : '#6252c5' }}>
                         {currentObject.name}
                     </h2>
                     <div className={s.flags}>{renderVariants()}</div>

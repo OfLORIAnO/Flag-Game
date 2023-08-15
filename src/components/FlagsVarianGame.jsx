@@ -1,30 +1,17 @@
 import React, { useState } from 'react';
-import { correctAns, incorrectAns, selectCurrentObject, selectLives } from '../redux/Slices/GameSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { selectCurrentObject } from '../redux/Slices/GameSlice';
 import s from './FlagsVarianGame.module.scss';
-function FlagsVarianGame({ item, correct, allDisabled, setWasCorrect, isTimerPlaying, setIsTimerPlaying }) {
-    const dispatch = useDispatch();
-
+import { useSelector } from 'react-redux';
+function FlagsVarianGame({ item, correct, incorrect, allDisabled }) {
     const [isInCorrect, setIsInCorrect] = useState(false);
     const currentObject = useSelector(selectCurrentObject);
-    const lives = useSelector(selectLives);
-
-    const incorrect = () => {
-        dispatch(incorrectAns());
-    };
 
     const isCorrect = (ansId) => {
         if (currentObject.id === ansId) {
             correct();
         } else {
-            const lastLive = () => {
-                setWasCorrect(true);
-                setIsTimerPlaying(false);
-            };
             setIsInCorrect(true);
-            lives == 1 && lastLive();
-            setTimeout(incorrect, 1000);
-            // incorrect();
+            incorrect();
         }
     };
 

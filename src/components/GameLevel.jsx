@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './GameLevel.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectLevelList, setCurrentLevel, setLevelList, setStartGame } from '../redux/Slices/GameSlice';
+import { selectLevelList, setCurrentLevel, setLevelList, setMaxCurrentScore, setStartGame } from '../redux/Slices/GameSlice';
 import { changePage } from '../redux/Slices/PagesSlice';
 import { selectAllData } from '../redux/Slices/DataSlice';
 import { getLevelList } from '../utils/GameFuncs';
@@ -12,6 +12,7 @@ function GameLevel({ imageSrc, level, title, disabledStatus, maxScore }) {
     const startGame = () => {
         dispatch(setLevelList(getLevelList(allItems, level)));
         dispatch(setCurrentLevel(level));
+        dispatch(setMaxCurrentScore(maxScore.max));
         dispatch(setStartGame());
         dispatch(changePage('game'));
     };

@@ -1,4 +1,3 @@
-
 import ChildImg from '../assets/child.png';
 import StudentImg from '../assets/student.png';
 import TeacherImg from '../assets/teacher.png';
@@ -18,9 +17,9 @@ export const ImgMass = [
     AdventureImg,
     TravelerImg,
     //Тут пропуск нужно придумать
-    AlienImg,
     AmbassadorImg,
     GeographerImg,
+    AlienImg,
     CaptainImg,
     PresidentImg,
     AlienImg,

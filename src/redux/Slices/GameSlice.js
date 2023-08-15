@@ -5,8 +5,8 @@ const initialState = {
     currentObject: null, // Текущий вопрос
     currentStep: 0, // Индекс текущего вопроса
     lives: 0, // Количество жизней
-    // currentScore: 0,
-    // maxCurrentScore: 680,
+    currentScore: 0,
+    maxCurrentScore: 0,
     mode: null, // Flags | Capitals
 };
 export const gameSlice = createSlice({
@@ -55,6 +55,9 @@ export const gameSlice = createSlice({
             state.lives = 0;
             state.mode = null;
         },
+        setMaxCurrentScore: (state, action) => {
+            state.maxCurrentScore = action.payload;
+        },
     },
 });
 export const selectCurrentLevel = (state) => state.gameStore.currentLevel;
@@ -62,15 +65,8 @@ export const selectLevelList = (state) => state.gameStore.levelList;
 export const selectCurrentObject = (state) => state.gameStore.currentObject;
 export const selectCurrentStep = (state) => state.gameStore.currentStep;
 export const selectLives = (state) => state.gameStore.lives;
+export const selectMaxCurrentScore = (state) => state.gameStore.maxCurrentScore;
 
-export const {
-    setCurrentLevel,
-    setLevelList,
-    setStartGame,
-    setCurrentObject,
-    correctAns,
-    incorrectAns,
-    timeOut,
-    resetGame,
-} = gameSlice.actions;
+export const { setCurrentLevel, setLevelList, setStartGame, setCurrentObject, correctAns, incorrectAns, timeOut, resetGame, setMaxCurrentScore } =
+    gameSlice.actions;
 export default gameSlice.reducer;

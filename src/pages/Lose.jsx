@@ -6,22 +6,14 @@ import MenuImg from '../assets/menuGameOver.png';
 import ReloadImg from '../assets/reloadGameOver.png';
 import LoseImg from '../assets/lose.png';
 
-import { ImgMass } from '../utils/Src';
+import { ImgMass } from '../utils/ImageSrc';
 
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    resetGame,
-    selectCurrentLevel,
-    selectLevelList,
-    setCurrentLevel,
-    setLevelList,
-    setStartGame,
-} from '../redux/Slices/GameSlice';
+import { resetGame, selectCurrentLevel, selectLevelList, setCurrentLevel, setLevelList, setStartGame } from '../redux/Slices/GameSlice';
 import { changePage } from '../redux/Slices/PagesSlice';
 import { selectAllData } from '../redux/Slices/DataSlice';
 
 import { getLevelList } from '../utils/GameFuncs';
-
 
 function Lose() {
     const dispatch = useDispatch();
