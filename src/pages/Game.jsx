@@ -28,30 +28,14 @@ import s from './Game.module.scss';
 import { formatNumber } from '../utils/FormatNumber';
 import { GetVariants } from '../utils/GameFuncs';
 import { selectAllData } from '../redux/Slices/DataSlice';
-import VarianGame from '../components/VarianGame';
+import FlagsVarianGame from '../components/FlagsVarianGame';
 
 function Game() {
+    const dispatch = useDispatch();
     const [variants, setVariants] = useState([]);
     const [wasCorrect, setWasCorrect] = useState(false);
-    const dispatch = useDispatch();
-
-    const goToPrepareGame = () => {
-        dispatch(resetGame());
-        dispatch(changePage('gamePrepare'));
-    };
-    const doCorrect = () => {
-        dispatch(correctAns());
-        setWasCorrect(false);
-        console.log(wasCorrect);
-    };
-    const correct = () => {
-        setWasCorrect(true);
-        console.log(wasCorrect);
-        setTimeout(doCorrect, 1000);
-    };
-    const incorrect = () => {
-        dispatch(incorrectAns());
-    };
+    const [isLastQuestion, setIsLastQuestion] = useState(false);
+    const [isTimerPlaying, setIsTimerPlaying] = useState(true);
 
     const allData = useSelector(selectAllData);
     const levelList = useSelector(selectLevelList);
@@ -60,36 +44,77 @@ function Game() {
     const step = useSelector(selectCurrentStep);
     const lives = useSelector(selectLives);
 
+    const goToPrepareGame = () => {
+        dispatch(resetGame());
+        dispatch(changePage('gamePrepare'));
+    };
+
+    const correct = () => {
+        setIsTimerPlaying(false);
+        const doCorrect = () => {
+            dispatch(correctAns());
+            setWasCorrect(false);
+            setIsTimerPlaying(true);
+        };
+        setWasCorrect(true);
+        setTimeout(doCorrect, 1000);
+    };
+    const incorrect = () => {
+        dispatch(incorrectAns());
+    };
+    useEffect(() => {
+        step === levelList.length - 1 && setIsLastQuestion(true);
+    }, [step]);
     useEffect(() => {
         currentObject && setVariants(GetVariants(allData, currentObject));
     }, [step]);
     useEffect(() => {
-        lives === 0 && goToPrepareGame();
+        lives === 0 && GameOver();
     }, [lives]);
+
+    const GameOver = () => {
+        goToLosePage();
+    };
+    const goToLosePage = () => {
+        dispatch(changePage('lose'));
+    };
+    const GameWin = () => {};
 
     const renderLivs = () => {
         const livesArray = [];
         for (let i = 0; i < lives; i++) {
-            livesArray.push(
-                <img key={i} src={LifeImg} alt={`${lives} Life`} />
-            );
+            livesArray.push(<img key={i} src={LifeImg} alt={`${lives} Life`} />);
         }
         return livesArray;
     };
     const timerOut = () => {
         dispatch(timeOut());
     };
-
+    const renderVariants = () => {
+        return (
+            variants &&
+            variants.map((item) => {
+                return (
+                    <FlagsVarianGame
+                        isTimerPlaying={isTimerPlaying}
+                        setIsTimerPlaying={setIsTimerPlaying}
+                        setWasCorrect={setWasCorrect}
+                        allDisabled={wasCorrect}
+                        key={item.id}
+                        item={item}
+                        correct={correct}
+                    />
+                );
+            })
+        );
+    };
     if (currentObject) {
         return (
             <div className={s.game}>
                 <div className={s.header__container}>
                     <header className={s.header}>
                         <div className={s.header_left}>
-                            <button
-                                className={s.changePage}
-                                onClick={() => goToPrepareGame()}
-                            >
+                            <button className={s.changePage} onClick={() => goToPrepareGame()}>
                                 <img src={backImg} alt='Button Back' />
                             </button>
                             <div className={s.lives}>{renderLivs()}</div>
@@ -100,8 +125,8 @@ function Game() {
                                 <img src={SoundImg} alt='' />
                             </button>
                             <CountdownCircleTimer
+                                isPlaying={isTimerPlaying}
                                 key={step}
-                                isPlaying={true}
                                 size={40}
                                 strokeWidth={3}
                                 colors={'#fff'}
@@ -128,31 +153,14 @@ function Game() {
                 </div>
                 <div className={s.progress}>
                     <div className={s.out}>
-                        <div
-                            className={s.bar}
-                            style={{ width: `${(step / 20) * 100}%` }}
-                        ></div>
+                        <div className={s.bar} style={{ width: `${(step / 20) * 100}%` }}></div>
                     </div>
                 </div>
                 <div className={s.content}>
-                    <h2
-                        className={s.title}
-                        style={{ color: wasCorrect ? '#229D01' : '#6252c5' }}
-                    >
+                    <h2 className={s.title} style={{ color: wasCorrect ? '#229D01' : '#6252c5' }}>
                         {currentObject.name}
                     </h2>
-                    <div className={s.flags}>
-                        {variants &&
-                            variants.map((item) => {
-                                return (
-                                    <VarianGame
-                                        key={item.id}
-                                        item={item}
-                                        correct={correct}
-                                    />
-                                );
-                            })}
-                    </div>
+                    <div className={s.flags}>{renderVariants()}</div>
                 </div>
             </div>
         );

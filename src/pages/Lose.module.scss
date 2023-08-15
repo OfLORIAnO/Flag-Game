@@ -1,0 +1,42 @@
+@import '../settings.scss';
+@import '../gameSettings.module.scss';
+.lose {
+    background: $lose-background;
+    height: 100vh;
+    padding: 50px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.main {
+    max-width: 500px;
+    margin: 0 auto 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        width: 140px;
+        margin: 0 auto;
+    }
+    .text {
+        margin: -10px 0px 0px 0px;
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        color: $font-color;
+        font-weight: 700;
+        border-radius: 20px;
+        background: $lose-tablet-background;
+        padding: 20px;
+        img {
+            margin: 0px 0px 0px 10px;
+            max-width: 45px;
+        }
+    }
+}
+.control_container {
+    width: 200px;
+    margin: 0px auto 50px auto;
+}
+.control {
+}

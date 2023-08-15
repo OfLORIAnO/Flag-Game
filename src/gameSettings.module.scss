@@ -1,0 +1,39 @@
+@import './settings.scss';
+$lose-background: #e84c3d;
+$lose-tablet-background: #f1c40f;
+$win-background: #00bcd5;
+
+.control {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    button {
+        width: 85px;
+        height: 85px;
+        background: $background;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 50%;
+        img {
+            transition-duration: 0.2s;
+            width: 41px;
+            height: 41px;
+            object-fit: contain;
+        }
+    }
+    button.reload:hover {
+        img {
+            transition-duration: 0.2s;
+            transform: rotate(-20deg);
+        }
+    }
+    button.menu:hover {
+        img {
+            transition-duration: 0.2s;
+            transform: scale(1.05);
+        }
+    }
+}

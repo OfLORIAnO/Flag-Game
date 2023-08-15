@@ -1,15 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
-    currentLevel: null, // Номер уровня в игре
+    currentLevel: 12, // Номер уровня в игре
     levelList: null, // Список из вопросов
     currentObject: null, // Текущий вопрос
     currentStep: 0, // Индекс текущего вопроса
     lives: 0, // Количество жизней
+    mode: null, // Flags | Capitals
 };
 export const gameSlice = createSlice({
     name: 'gameStore',
     initialState,
     reducers: {
+        losePage: (state) => {
+            state.levelList = null;
+            state.currentObject = null;
+            state.currentStep = 0;
+            state.lives = 0;
+        },
         setCurrentLevel: (state, action) => {
             state.currentLevel = action.payload;
         },
@@ -28,9 +35,11 @@ export const gameSlice = createSlice({
             state.currentStep += 1;
             state.currentObject = state.levelList[state.currentStep];
         },
+
         incorrectAns: (state) => {
             state.lives -= 1;
         },
+
         timeOut: (state) => {
             state.lives -= 1;
             state.currentStep += 1;
@@ -42,6 +51,7 @@ export const gameSlice = createSlice({
             state.currentObject = null;
             state.currentStep = 0;
             state.lives = 0;
+            state.mode = null;
         },
     },
 });
