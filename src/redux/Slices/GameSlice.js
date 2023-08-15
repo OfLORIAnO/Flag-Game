@@ -5,6 +5,8 @@ const initialState = {
     currentObject: null, // Текущий вопрос
     currentStep: 0, // Индекс текущего вопроса
     lives: 0, // Количество жизней
+    // currentScore: 0,
+    // maxCurrentScore: 680,
     mode: null, // Flags | Capitals
 };
 export const gameSlice = createSlice({

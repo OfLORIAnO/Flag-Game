@@ -5,7 +5,7 @@ import { selectLevelList, setCurrentLevel, setLevelList, setStartGame } from '..
 import { changePage } from '../redux/Slices/PagesSlice';
 import { selectAllData } from '../redux/Slices/DataSlice';
 import { getLevelList } from '../utils/GameFuncs';
-function GameLevel({ imageSrc, level, title, disabledStatus }) {
+function GameLevel({ imageSrc, level, title, disabledStatus, maxScore }) {
     const dispatch = useDispatch();
     const allItems = useSelector(selectAllData); // весь массив данных
     const levelList = useSelector(selectLevelList);
@@ -23,7 +23,7 @@ function GameLevel({ imageSrc, level, title, disabledStatus }) {
             </div>
             <div className={s.text}>
                 <h3>{title}</h3>
-                <span className={s.score}>512/680</span>
+                {!disabledStatus && <span className={s.score}>{maxScore && `${maxScore.current}/${maxScore.max}`}</span>}
             </div>
         </button>
     );

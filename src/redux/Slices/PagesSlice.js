@@ -6,6 +6,7 @@ const initialState = {
     profile: false,
     game: false,
     lose: true,
+    win: false,
 };
 export const pageSlice = createSlice({
     name: 'pageStore',
@@ -19,6 +20,7 @@ export const pageSlice = createSlice({
                 state.profile = false;
                 state.game = false;
                 state.lose = false;
+                state.win = false;
             } else if (action.payload === 'flagInfo') {
                 state.flagInfo = true;
                 state.home = false;
@@ -26,6 +28,7 @@ export const pageSlice = createSlice({
                 state.profile = false;
                 state.game = false;
                 state.lose = false;
+                state.win = false;
             } else if (action.payload === 'profile') {
                 state.profile = true;
                 state.home = false;
@@ -33,6 +36,7 @@ export const pageSlice = createSlice({
                 state.gamePrepare = false;
                 state.game = false;
                 state.lose = false;
+                state.win = false;
             } else if (action.payload === 'gamePrepare') {
                 state.gamePrepare = true;
                 state.home = false;
@@ -40,6 +44,7 @@ export const pageSlice = createSlice({
                 state.profile = false;
                 state.game = false;
                 state.lose = false;
+                state.win = false;
             } else if (action.payload === 'game') {
                 state.game = true;
                 state.home = false;
@@ -47,8 +52,18 @@ export const pageSlice = createSlice({
                 state.profile = false;
                 state.gamePrepare = false;
                 state.lose = false;
+                state.win = false;
             } else if (action.payload === 'lose') {
                 state.lose = true;
+                state.home = false;
+                state.flagInfo = false;
+                state.profile = false;
+                state.gamePrepare = false;
+                state.game = false;
+                state.win = false;
+            } else if (action.payload === 'win') {
+                state.win = true;
+                state.lose = false;
                 state.home = false;
                 state.flagInfo = false;
                 state.profile = false;
@@ -64,6 +79,7 @@ export const selectGamePrepare = (state) => state.pageStore.gamePrepare;
 export const selectProfile = (state) => state.pageStore.profile;
 export const selectGame = (state) => state.pageStore.game;
 export const selectLose = (state) => state.pageStore.lose;
+export const selectWin = (state) => state.pageStore.win;
 
 export const { changePage } = pageSlice.actions;
 export default pageSlice.reducer;

@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import dataFile from '../data.json';
+import playerDataJson from '../PlayerStats.json';
 const initialState = {
-    // allData: dataFile,
-    // filterValue: '',
+    playerData: playerDataJson,
 };
 export const playerSlice = createSlice({
     name: 'playerStore',
@@ -13,7 +13,6 @@ export const playerSlice = createSlice({
         // },
     },
 });
-// export const selectAllData = (state) => state.playerStore.allData;
-// export const selectFiltered = (state) => state.playerStore.filterValue;
+export const selectPlayerData = (state) => state.playerStore.playerData;
 // export const { filterData } = playerSlice.actions;
 export default playerSlice.reducer;

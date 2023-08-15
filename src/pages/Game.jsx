@@ -16,14 +16,13 @@ import { changePage } from '../redux/Slices/PagesSlice';
 import Header from '../components/Header';
 
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
-
+import CapitalImg from '../assets/capital.png';
+import PopulationImg from '../assets/population.png';
 import backImg from '../assets/back.png';
 import FlagImg from '../assets/flag.png';
 import LifeImg from '../assets/life.png';
 import SoundImg from '../assets/sound.png';
-import CapitalImg from '../assets/capital.png';
-import PopulationImg from '../assets/population.png';
-
+import { ImgMass } from '../utils/Src';
 import s from './Game.module.scss';
 import { formatNumber } from '../utils/FormatNumber';
 import { GetVariants } from '../utils/GameFuncs';
@@ -45,7 +44,7 @@ function Game() {
     const lives = useSelector(selectLives);
 
     const goToPrepareGame = () => {
-        dispatch(resetGame());
+        // dispatch(resetGame());
         dispatch(changePage('gamePrepare'));
     };
 
@@ -57,6 +56,9 @@ function Game() {
             setIsTimerPlaying(true);
         };
         setWasCorrect(true);
+        if (isLastQuestion) {
+            //! тут что-то сделать короче чтоб победа была в этом как там его аааа в редуксе добавь "win" там
+        }
         setTimeout(doCorrect, 1000);
     };
     const incorrect = () => {
@@ -64,6 +66,9 @@ function Game() {
     };
     useEffect(() => {
         step === levelList.length - 1 && setIsLastQuestion(true);
+    }, [step]);
+    useEffect(() => {
+        isLastQuestion && GameWin();
     }, [step]);
     useEffect(() => {
         currentObject && setVariants(GetVariants(allData, currentObject));
@@ -78,7 +83,9 @@ function Game() {
     const goToLosePage = () => {
         dispatch(changePage('lose'));
     };
-    const GameWin = () => {};
+    const GameWin = () => {
+        dispatch(changePage('win'));
+    };
 
     const renderLivs = () => {
         const livesArray = [];
@@ -119,7 +126,10 @@ function Game() {
                             </button>
                             <div className={s.lives}>{renderLivs()}</div>
                         </div>
-                        <h1>Уровень {level}</h1>
+                        <div className={s.header_center}>
+                            <img src={ImgMass[level - 1]} alt='Level Icon Image' />
+                            <h1>Уровень {level}</h1>
+                        </div>
                         <div className={s.header_right}>
                             <button className={s.sound}>
                                 <img src={SoundImg} alt='' />

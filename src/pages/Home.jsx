@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../components/Header';
 
 import FlagHeaderImg from '../assets/flagMain.png';
@@ -9,31 +9,18 @@ import ProfileImg from '../assets/Profile.png';
 
 import s from './Home.module.scss';
 import HomeRouters from '../components/HomeRouters';
+import { useSelector } from 'react-redux';
+import { selectPlayerData } from '../redux/Slices/PlayerSlice';
 function Home() {
+
     return (
         <>
             <Header title='Флаги' imgSource={FlagHeaderImg} />
             <div className={s.wrapper}>
-                <HomeRouters
-                    title='Начать игру'
-                    imageSrc={PlayImg}
-                    MoveTo={'gamePrepare'}
-                />
-                <HomeRouters
-                    title='Все флаги'
-                    imageSrc={FlagImg}
-                    MoveTo={'flagInfo'}
-                />
-                <HomeRouters
-                    title='Система оценивания'
-                    imageSrc={StarImg}
-                    MoveTo={''}
-                />
-                <HomeRouters
-                    title='Профиль'
-                    imageSrc={ProfileImg}
-                    MoveTo={'profile'}
-                />
+                <HomeRouters title='Начать игру' imageSrc={PlayImg} MoveTo={'gamePrepare'} />
+                <HomeRouters title='Все флаги' imageSrc={FlagImg} MoveTo={'flagInfo'} />
+                <HomeRouters title='Система оценивания' imageSrc={StarImg} MoveTo={''} />
+                <HomeRouters title='Профиль' imageSrc={ProfileImg} MoveTo={'profile'} />
             </div>
         </>
     );
