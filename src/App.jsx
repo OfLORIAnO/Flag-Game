@@ -1,6 +1,6 @@
 import './reset.css';
 import './settings.scss';
-
+import './App.css';
 import FlagInfo from './pages/FlagInfo';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,6 +22,7 @@ import Profile from './pages/Profile';
 import Game from './pages/Game';
 import Lose from './pages/Lose';
 import Win from './pages/Win';
+
 import { useEffect } from 'react';
 
 function App() {

@@ -11,9 +11,7 @@ function Search() {
         dispatch(filterData(text));
         setsearchInputValue(text);
     };
-    useEffect(() => {
-        console.log(filterValue);
-    }, [filterValue]);
+
     const dispatch = useDispatch();
     return (
         <div className={s.container}>

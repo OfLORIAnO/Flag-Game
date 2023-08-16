@@ -1,0 +1,96 @@
+@import '../settings.scss';
+@import '../gameSettings.module.scss';
+.win {
+    background: $win-background;
+    height: 100vh;
+    padding: 30px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    @media (max-width: 650px) {
+        flex-direction: column;
+    }
+}
+.main {
+    max-width: 500px;
+    margin: 0 auto 0px auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0px 10px 0px;
+    @media (max-width: 650px) {
+        display: flex;
+    }
+    .header_info {
+        padding: 0px 10px 0px 0px;
+        display: flex;
+        align-items: center;
+        max-height: 230px;
+        min-height: 150px;
+        @media (max-width: 650px) {
+            flex-direction: column;
+        }
+        img {
+            padding: 0px 10px 0px 0px;
+            order: 1;
+            max-width: 30%;
+            max-height: 100%;
+            margin: 0 auto;
+        }
+        .text {
+            order: 2;
+            margin: -10px 0px 0px 0px;
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            color: $font-color;
+            font-weight: 700;
+            border-radius: 20px;
+            background: $win-tablet-background;
+            padding: 20px;
+            @media (max-width: 850px) {
+                font-size: 20px;
+            }
+            @media (max-width: 650px) {
+                font-size: 30px;
+            }
+            img {
+                margin: 0px 0px 0px 10px;
+                max-width: 45px;
+            }
+        }
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+        @media (max-width: 650px) {
+            margin: 20px 0px 0px 0px;
+        }
+        .score {
+            margin: 0px 0px 0px 0px;
+            font-size: 30px;
+            color: $font-color;
+            span {
+                color: rgba($color: $font-color, $alpha: 0.6);
+            }
+        }
+        .lives {
+            margin: 20px 0px 0px 0px;
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img {
+                width: 76px;
+                height: 66px;
+            }
+        }
+    }
+}
+.control_container {
+    width: 300px;
+    margin: 0px auto 70px auto;
+}

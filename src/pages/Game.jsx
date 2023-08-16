@@ -5,10 +5,12 @@ import {
     resetGame,
     selectCurrentLevel,
     selectCurrentObject,
+    selectCurrentScore,
     selectCurrentStep,
     selectLevelList,
     selectLives,
     selectMaxCurrentScore,
+    setCurrentScore,
     timeOut,
 } from '../redux/Slices/GameSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -37,6 +39,7 @@ function Game() {
     const [showGreen, setShowGreen] = useState(false);
     const [isLastQuestion, setIsLastQuestion] = useState(false);
     const [isTimerPlaying, setIsTimerPlaying] = useState(true);
+    const [currentTime, setCurrentTime] = useState();
 
     const allData = useSelector(selectAllData);
     const levelList = useSelector(selectLevelList);
@@ -44,15 +47,25 @@ function Game() {
     const currentObject = useSelector(selectCurrentObject);
     const step = useSelector(selectCurrentStep);
     const lives = useSelector(selectLives);
+    const maxCurrentScore = useSelector(selectMaxCurrentScore);
+    const currentScore = useSelector(selectCurrentScore);
 
     const goToPrepareGame = () => {
         // dispatch(resetGame());
         dispatch(changePage('gamePrepare'));
     };
 
-    const correct = () => {
-        setIsTimerPlaying(false);
+    useEffect(() => {
+        console.log(`${currentScore}/${maxCurrentScore}`);
+    }, [maxCurrentScore, currentScore]);
 
+    const correct = () => {
+        dispatch(setCurrentScore(currentTime));
+        setIsTimerPlaying(false);
+        if (isLastQuestion) {
+            GameWin();
+            return;
+        }
         const doCorrect = () => {
             dispatch(correctAns());
             !isLastQuestion && setWasCorrect(false);
@@ -61,9 +74,7 @@ function Game() {
         };
         setWasCorrect(true);
         setShowGreen(true);
-        if (isLastQuestion) {
-            //! тут что-то сделать короче чтоб победа была в этом как там его аааа в редуксе добавь "win" там
-        }
+
         setTimeout(doCorrect, 1000);
     };
     const incorrect = () => {
@@ -77,16 +88,23 @@ function Game() {
         lives == 1 && lastLive();
         setTimeout(doIncorrect, 1000);
     };
+    const timerOut = () => {
+        isLastQuestion && GameOver();
+        dispatch(timeOut());
+    };
 
     useEffect(() => {
         currentObject && setVariants(GetVariants(allData, currentObject));
     }, [step]);
     useEffect(() => {
         step === levelList.length - 1 && setIsLastQuestion(true);
-    }, [step]);
-    useEffect(() => {
         isLastQuestion && GameWin();
     }, [step]);
+    useEffect(() => {}, [step]);
+
+    useEffect(() => {
+        isLastQuestion && console.log('Last question');
+    }, [isLastQuestion]);
 
     useEffect(() => {
         lives === 0 && GameOver();
@@ -99,7 +117,6 @@ function Game() {
         dispatch(changePage('lose'));
     };
     const GameWin = () => {
-        console.log('win was');
         dispatch(changePage('win'));
     };
 
@@ -110,9 +127,6 @@ function Game() {
         }
         return livesArray;
     };
-    const timerOut = () => {
-        dispatch(timeOut());
-    };
     const renderVariants = () => {
         return (
             variants &&
@@ -121,68 +135,66 @@ function Game() {
             })
         );
     };
-    if (currentObject) {
-        return (
-            <div className={s.game}>
-                <div className={s.header__container}>
-                    <header className={s.header}>
-                        <div className={s.header_left}>
-                            <button className={s.changePage} onClick={() => goToPrepareGame()}>
-                                <img src={backImg} alt='Button Back' />
-                            </button>
-                            <div className={s.lives}>{renderLivs()}</div>
-                        </div>
-                        <div className={s.header_center}>
-                            <img src={ImgMass[level - 1]} alt='Level Icon Image' />
-                            <h1>Уровень {level}</h1>
-                        </div>
-                        <div className={s.header_right}>
-                            <button className={s.sound}>
-                                <img src={SoundImg} alt='' />
-                            </button>
-                            <CountdownCircleTimer
-                                isPlaying={isTimerPlaying}
-                                key={step}
-                                size={40}
-                                strokeWidth={3}
-                                colors={'#fff'}
-                                trailColor={'#fff'}
-                                trailStrokeWidth={1}
-                                duration={20}
-                                onComplete={() => timerOut()}
-                            >
-                                {({ remainingTime }) => remainingTime}
-                            </CountdownCircleTimer>
-                        </div>
-                    </header>
-                </div>
+    return (
+        <div className={s.game}>
+            <div className={s.header__container}>
+                <header className={s.header}>
+                    <div className={s.header_left}>
+                        <button className={s.changePage} onClick={() => goToPrepareGame()}>
+                            <img src={backImg} alt='Button Back' />
+                        </button>
+                        <div className={s.lives}>{renderLivs()}</div>
+                    </div>
+                    <div className={s.header_center}>
+                        <img src={ImgMass[level - 1]} alt='Level Icon Image' />
+                        <h1>Уровень {level}</h1>
+                    </div>
+                    <div className={s.header_right}>
+                        <button className={s.sound}>
+                            {/* <img src={SoundImg} alt='' /> */}
+                            {`${step} / ${levelList.length}`}
+                        </button>
+                        <CountdownCircleTimer
+                            isPlaying={isTimerPlaying}
+                            key={step}
+                            size={40}
+                            strokeWidth={3}
+                            colors={'#fff'}
+                            trailColor={'#fff'}
+                            trailStrokeWidth={1}
+                            duration={20}
+                            onComplete={() => timerOut()}
+                            onUpdate={(remainingTime) => setCurrentTime(remainingTime)}
+                        >
+                            {({ remainingTime }) => remainingTime}
+                        </CountdownCircleTimer>
+                    </div>
+                </header>
+            </div>
 
-                <div className={s.info}>
-                    <div className={s.capital}>
-                        <img src={CapitalImg} alt='Capital Icon' />
-                        <span>{currentObject.capital}</span>
-                    </div>
-                    <div className={s.population}>
-                        <span>{formatNumber(currentObject.population)}</span>
-                        <img src={PopulationImg} alt='Population Icon' />
-                    </div>
+            <div className={s.info}>
+                <div className={s.capital}>
+                    <img src={CapitalImg} alt='Capital Icon' />
+                    <span>{currentObject.capital}</span>
                 </div>
-                <div className={s.progress}>
-                    <div className={s.out}>
-                        <div className={s.bar} style={{ width: `${(step / 20) * 100}%` }}></div>
-                    </div>
-                </div>
-                <div className={s.content}>
-                    <h2 className={s.title} style={{ color: showGreen ? '#229D01' : '#6252c5' }}>
-                        {currentObject.name}
-                    </h2>
-                    <div className={s.flags}>{renderVariants()}</div>
+                <div className={s.population}>
+                    <span>{formatNumber(currentObject.population)}</span>
+                    <img src={PopulationImg} alt='Population Icon' />
                 </div>
             </div>
-        );
-    } else {
-        goToPrepareGame();
-    }
+            <div className={s.progress}>
+                <div className={s.out}>
+                    <div className={s.bar} style={{ width: `${(step / 20) * 100}%` }}></div>
+                </div>
+            </div>
+            <div className={s.content}>
+                <h2 className={s.title} style={{ color: showGreen ? '#229D01' : '#6252c5' }}>
+                    {currentObject.name}
+                </h2>
+                <div className={s.flags}>{renderVariants()}</div>
+            </div>
+        </div>
+    );
 }
 
 export default Game;

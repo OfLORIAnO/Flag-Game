@@ -1,19 +1,24 @@
 @import '../settings.scss';
 @import '../gameSettings.module.scss';
 .lose {
-    background: $lose-background;
     height: 100vh;
     padding: 50px 0px 0px 0px;
+    background: $lose-background;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    @media (max-width: 650px) {
+        flex-direction: column;
+    }
 }
+
 .main {
     max-width: 500px;
     margin: 0 auto 100px auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    @media (max-width: 650px) {
+        flex-direction: column;
+    }
     img {
         width: 140px;
         margin: 0 auto;

@@ -14,24 +14,32 @@ import { changePage } from '../redux/Slices/PagesSlice';
 import { selectAllData } from '../redux/Slices/DataSlice';
 
 import { getLevelList } from '../utils/GameFuncs';
+import { selectPlayerData } from '../redux/Slices/PlayerSlice';
 
 function Lose() {
     const dispatch = useDispatch();
+
+    const [currentMaxScore, setCurrentMaxScore] = useState();
 
     const [currentImage, setCurrentImage] = useState();
     const level = useSelector(selectCurrentLevel);
     const allItems = useSelector(selectAllData); // весь массив данных
     const levelList = useSelector(selectLevelList);
+    const PlayerStats = useSelector(selectPlayerData);
 
     useEffect(() => {
         setCurrentImage(ImgMass[level - 1]);
     }, []);
 
+    // useEffect(() => {
+    //     PlayerStats && setCurrentMaxScore(PlayerStats.flag.score[level].max);
+    // }, [PlayerStats]);
+
     const onMenuClick = () => {
         dispatch(changePage('gamePrepare'));
         dispatch(resetGame());
     };
-    const onReloadlick = () => {
+    const onReloadСlick = () => {
         dispatch(setLevelList(getLevelList(allItems, level)));
         dispatch(setCurrentLevel(level));
         dispatch(setStartGame());
@@ -52,7 +60,7 @@ function Lose() {
                     <button className={s.menu} onClick={() => onMenuClick()}>
                         <img src={MenuImg} alt='Menu' />
                     </button>
-                    <button className={s.reload} onClick={() => onReloadlick()}>
+                    <button className={s.reload} onClick={() => onReloadСlick()}>
                         <img src={ReloadImg} alt='Again' />
                     </button>
                 </div>

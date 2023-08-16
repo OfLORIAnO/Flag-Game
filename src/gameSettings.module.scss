@@ -2,11 +2,14 @@
 $lose-background: #e84c3d;
 $lose-tablet-background: #f1c40f;
 $win-background: #00bcd5;
+$win-tablet-background: #7761ff;
 
 .control {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 100%;
     button {
         width: 85px;
         height: 85px;
@@ -34,6 +37,12 @@ $win-background: #00bcd5;
         img {
             transition-duration: 0.2s;
             transform: scale(1.05);
+        }
+    }
+    button.next:hover {
+        img {
+            transition-duration: 0.2s;
+            transform: translateX(3px);
         }
     }
 }
