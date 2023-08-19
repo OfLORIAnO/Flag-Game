@@ -44,15 +44,16 @@ export const getLevelList = (allData, level) => {
         return shuffledArray;
     }
 };
-export const GetVariants = (allData, currentObject) => {
+export const GetVariants = (allData, currentObject, prevObjects) => {
     let massOfSimilar = new Array();
     for (let i = 0; i < currentObject.similar.length; i++) {
         const similarId = currentObject.similar[i]; // Id элементов
         const findedElem = allData.find((item) => item.id == similarId);
         if (findedElem) {
-            massOfSimilar.push(findedElem);
-        } else {
-            return null;
+            if (!prevObjects.includes(findedElem)) {
+                massOfSimilar.push(findedElem);
+            } else {
+            }
         }
     }
     let RandNum = Math.floor(Math.random() * 3) + 1;
@@ -72,7 +73,7 @@ export const GetVariants = (allData, currentObject) => {
     while (readyMass.length < 4) {
         const RandIndex = Math.floor(Math.random() * allData.length);
         const newElem = allData[RandIndex];
-        if (!readyMass.includes(newElem)) {
+        if (!readyMass.includes(newElem) && !prevObjects.includes(newElem)) {
             readyMass.push(newElem);
         }
     }

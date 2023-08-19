@@ -15,6 +15,7 @@ import { selectAllData } from '../redux/Slices/DataSlice';
 
 import { getLevelList } from '../utils/GameFuncs';
 import { selectPlayerData } from '../redux/Slices/PlayerSlice';
+import { selectCanShowAdv, selectYsdk, setCanShow } from '../redux/Slices/AdvertSlice';
 
 function Lose() {
     const dispatch = useDispatch();
@@ -27,13 +28,33 @@ function Lose() {
     const levelList = useSelector(selectLevelList);
     const PlayerStats = useSelector(selectPlayerData);
 
+    const ysdk = useSelector(selectYsdk);
+    const canShow = useSelector(selectCanShowAdv);
+
     useEffect(() => {
         setCurrentImage(ImgMass[level - 1]);
+        canShow &&
+            ysdk &&
+            ysdk.adv.showFullscreenAdv({
+                callbacks: {
+                    onClose: function (wasShown) {
+                        if (wasShown) {
+                            dispatch(setCanShow());
+                            const turnOnAdv = () => {
+                                dispatch(setCanShow());
+                            };
+                            setTimeout(turnOnAdv, 60_000);
+                            console.log('adv was shown');
+                        } else {
+                            console.log('adv no was shown. Just error');
+                        }
+                    },
+                    onError: function (error) {
+                        console.log('adv error', error);
+                    },
+                },
+            });
     }, []);
-
-    // useEffect(() => {
-    //     PlayerStats && setCurrentMaxScore(PlayerStats.flag.score[level].max);
-    // }, [PlayerStats]);
 
     const onMenuClick = () => {
         dispatch(changePage('gamePrepare'));

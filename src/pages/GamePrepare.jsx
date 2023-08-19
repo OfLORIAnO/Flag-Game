@@ -17,17 +17,13 @@ import AlienImg from '../assets/alien.png';
 
 import s from './GamePrepare.module.scss';
 
-import { selectFlagMaxLevel, selectFlagScores, selectPlayerData } from '../redux/Slices/PlayerSlice';
+import { selectFlagMaxLevel, selectFlagScores } from '../redux/Slices/PlayerSlice';
 import { useSelector } from 'react-redux';
 
 export default function GamePrepare() {
-    const PlayerData = useSelector(selectPlayerData);
-    const [allScore, setAllScore] = useState([]);
     const dataCurrentLevel = useSelector(selectFlagMaxLevel);
     const FlagScores = useSelector(selectFlagScores);
-    useEffect(() => {
-        setAllScore(PlayerData.flag.score);
-    }, [PlayerData]);
+
     return (
         <>
             <Header title={'Игра'} imgSource={FlagImg} moveTo={'home'} />

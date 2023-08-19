@@ -3,7 +3,10 @@ import Header from '../components/Header';
 import s from './Profile.module.scss';
 import ProfileImg from '../assets/profile.png';
 import starImg from '../assets/Star.png';
+import { useSelector } from 'react-redux';
+import { selectTotalScore } from '../redux/Slices/PlayerSlice';
 function Profile() {
+    const totalScore = useSelector(selectTotalScore);
     return (
         <>
             <Header title={'Профиль'} imgSource={ProfileImg} moveTo={'home'} />
@@ -13,11 +16,10 @@ function Profile() {
                         <img src={starImg} alt='Star Image' />
                         <div className={s.text}>
                             <h2>Всего очков заработано</h2>
-                            <span>432</span>
+                            <span>{totalScore}</span>
                         </div>
                     </div>
                 </div>
-                
             </div>
         </>
     );

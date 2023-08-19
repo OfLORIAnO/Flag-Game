@@ -1,37 +1,17 @@
 {
-    "totalScore": 0,
-    "flag": {
-        "score": [
-            { "current": 0, "max": 260 },
-            { "current": 0, "max": 316 },
-            { "current": 0, "max": 414 },
-            { "current": 0, "max": 521 },
-            { "current": 0, "max": 660 },
-            { "current": 0, "max": 756 },
-            { "current": 0, "max": 806 },
-            { "current": 0, "max": 894 },
-            { "current": 0, "max": 960 },
-            { "current": 0, "max": 1080 },
-            { "current": 0, "max": 1620 },
-            { "current": 0, "max": 1930 }
-        ],
-        "currentLevel": 1
-    },
-    "capital": {
-        "score": [
-            { "current": 0, "max": 260 },
-            { "current": 0, "max": 316 },
-            { "current": 0, "max": 414 },
-            { "current": 0, "max": 521 },
-            { "current": 0, "max": 660 },
-            { "current": 0, "max": 756 },
-            { "current": 0, "max": 806 },
-            { "current": 0, "max": 894 },
-            { "current": 0, "max": 960 },
-            { "current": 0, "max": 1080 },
-            { "current": 0, "max": 1620 },
-            { "current": 0, "max": 1930 }
-        ],
-        "currentLevel": 1
-    }
+    "score": [
+        { "current": 0, "max": 260 },
+        { "current": 0, "max": 316 },
+        { "current": 0, "max": 414 },
+        { "current": 0, "max": 521 },
+        { "current": 0, "max": 660 },
+        { "current": 0, "max": 756 },
+        { "current": 0, "max": 806 },
+        { "current": 0, "max": 894 },
+        { "current": 0, "max": 960 },
+        { "current": 0, "max": 1080 },
+        { "current": 0, "max": 1620 },
+        { "current": 0, "max": 1930 }
+    ],
+    "currentLevel": 1
 }

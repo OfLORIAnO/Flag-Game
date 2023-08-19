@@ -27,7 +27,8 @@ import {
 import { changePage } from '../redux/Slices/PagesSlice';
 import { selectAllData } from '../redux/Slices/DataSlice';
 import { getLevelList } from '../utils/GameFuncs';
-import { levelComplite, selectFlagMaxLevel, selectFlagScores, selectPlayerData, setScore } from '../redux/Slices/PlayerSlice';
+import { levelComplite, selectFlagMaxLevel, selectFlagScores, selectPlayerData, selectPlayerSdk, setScore } from '../redux/Slices/PlayerSlice';
+import { selectCanShowAdv, selectYsdk, setCanShow } from '../redux/Slices/AdvertSlice';
 function Win() {
     const dispatch = useDispatch();
     const isRerendered = useRef(false);
@@ -40,6 +41,32 @@ function Win() {
     const PlayerStats = useSelector(selectPlayerData);
     const dataCurrentLevel = useSelector(selectFlagMaxLevel);
     const PlayerScores = useSelector(selectFlagScores);
+    // Показ рекламы
+    const ysdk = useSelector(selectYsdk);
+    const canShow = useSelector(selectCanShowAdv);
+    useEffect(() => {
+        canShow &&
+            ysdk &&
+            ysdk.adv.showFullscreenAdv({
+                callbacks: {
+                    onClose: function (wasShown) {
+                        if (wasShown) {
+                            dispatch(setCanShow());
+                            const turnOnAdv = () => {
+                                dispatch(setCanShow());
+                            };
+                            setTimeout(turnOnAdv, 60_000);
+                            console.log('adv was shown');
+                        } else {
+                            console.log('adv no was shown. Just error');
+                        }
+                    },
+                    onError: function (error) {
+                        console.log('adv error', error);
+                    },
+                },
+            });
+    }, []);
 
     const onMenuClick = () => {
         dispatch(changePage('gamePrepare'));
@@ -54,7 +81,7 @@ function Win() {
     const OnNextLevel = () => {
         dispatch(setNextLevel());
         dispatch(setLevelList(getLevelList(allItems, level + 1)));
-        dispatch(setMaxCurrentScore(PlayerStats.flag.score[level - 1].max));
+        dispatch(setMaxCurrentScore(PlayerStats.score[level - 1].max));
         dispatch(setStartGame());
         dispatch(changePage('game'));
     };
@@ -69,6 +96,7 @@ function Win() {
         dispatch(updateScore(scoreUpdeted));
         return scoreUpdeted;
     };
+    const PlayerSdk = useSelector(selectPlayerSdk);
     useEffect(() => {
         setCurrentImage(ImgMass[level - 1]);
         const scoreUpdeted = calcTotalScore();
@@ -77,10 +105,20 @@ function Win() {
         }
         if (scoreUpdeted >= PlayerScores[level - 1].current) {
             const index = level - 1;
+
             dispatch(setScore({ index, scoreUpdeted }));
         }
         isRerendered.current = true;
     }, []);
+    useEffect(() => {
+        PlayerSdk.setData({
+            score: PlayerScores,
+            currentLevel: dataCurrentLevel,
+        }).then(() => {
+            console.log('PlayerScores: ', PlayerScores, 'was set in data');
+            console.log('dataCurrentLevel: ', dataCurrentLevel, 'was set in data');
+        });
+    }, [PlayerScores]);
     const renderLivs = () => {
         const livesArray = [];
         for (let i = 0; i < lives; i++) {

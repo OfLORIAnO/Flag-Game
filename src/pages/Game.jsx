@@ -51,7 +51,7 @@ function Game() {
     const currentScore = useSelector(selectCurrentScore);
 
     const goToPrepareGame = () => {
-        // dispatch(resetGame());
+        dispatch(resetGame());
         dispatch(changePage('gamePrepare'));
     };
 
@@ -94,7 +94,7 @@ function Game() {
     };
 
     useEffect(() => {
-        currentObject && setVariants(GetVariants(allData, currentObject));
+        currentObject && setVariants(GetVariants(allData, currentObject, variants));
     }, [step]);
     useEffect(() => {
         step === levelList.length - 1 && setIsLastQuestion(true);
