@@ -6,7 +6,7 @@ import MenuImg from '../assets/menuGameOver.png';
 import ReloadImg from '../assets/reloadGameOver.png';
 import LoseImg from '../assets/lose.png';
 
-import { ImgMass } from '../utils/ImageSrc';
+import { ImgMass } from '../utils/Sources';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { resetGame, selectCurrentLevel, selectLevelList, setCurrentLevel, setLevelList, setStartGame } from '../redux/Slices/GameSlice';
@@ -14,19 +14,15 @@ import { changePage } from '../redux/Slices/PagesSlice';
 import { selectAllData } from '../redux/Slices/DataSlice';
 
 import { getLevelList } from '../utils/GameFuncs';
-import { selectPlayerData } from '../redux/Slices/PlayerSlice';
 import { selectCanShowAdv, selectYsdk, setCanShow } from '../redux/Slices/AdvertSlice';
 
 function Lose() {
     const dispatch = useDispatch();
 
-    const [currentMaxScore, setCurrentMaxScore] = useState();
-
     const [currentImage, setCurrentImage] = useState();
+
     const level = useSelector(selectCurrentLevel);
     const allItems = useSelector(selectAllData); // весь массив данных
-    const levelList = useSelector(selectLevelList);
-    const PlayerStats = useSelector(selectPlayerData);
 
     const ysdk = useSelector(selectYsdk);
     const canShow = useSelector(selectCanShowAdv);

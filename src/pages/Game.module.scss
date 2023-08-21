@@ -157,7 +157,9 @@
     display: flex;
     min-height: 100%;
     flex-direction: column;
-    h2 {
+    .title {
+        position: relative;
+        margin: 0 auto;
         display: flex;
         flex: 1 1 100%;
         align-items: center;
@@ -167,11 +169,14 @@
         font-weight: 600;
         padding: 0 20px;
         text-align: center;
+        width: 100%;
+        padding: 0 20px;
         @media (max-width: 500px) {
             font-size: 50px;
         }
     }
     .flags {
+        // background: green;
         flex: 1 1 50px;
         display: grid;
         justify-items: center;
@@ -181,5 +186,106 @@
         @media (max-width: 850px) {
             grid-template-columns: repeat(2, 150px);
         }
+    }
+}
+.reward {
+    animation: popUpAnimation 0.5s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color: #000000, $alpha: 0.7);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    .popUp {
+        border-radius: 20px;
+        background: $background;
+        max-height: 330px;
+        min-height: 250px;
+        max-width: 380px;
+        min-width: 300px;
+        // box-shadow: 0px 0px 15px 5px $primary;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px 0px 20px 0px;
+        h2 {
+            color: $font-color;
+            font-weight: 500;
+            font-size: 25px;
+            text-align: center;
+        }
+        .lastChange {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            background: $primary;
+            box-shadow: $box-shadow;
+            border: none;
+            border-radius: 10px;
+            transition-duration: 0.2s;
+            &:hover {
+                background: $secondary;
+                transition-duration: 0.2s;
+                transform: translateY(4px);
+                box-shadow: 0px 0px $primary;
+            }
+            h3 {
+                font-size: 25px;
+                font-weight: 500;
+                color: $font-color;
+                margin: 0px 10px 0px 0px;
+            }
+            .popUp__lives {
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & > *:not(:last-child) {
+                    margin: 0px 7px 0px 0px;
+                }
+                img {
+                    width: 47px;
+                    height: 40px;
+                    animation: heartbeat 1s infinite;
+                }
+            }
+        }
+        .toLose {
+            background: none;
+            border: none;
+            color: $secondary;
+            font-size: 20px;
+        }
+    }
+}
+@keyframes heartbeat {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    10% {
+        transform: scale(1.05);
+    }
+    20% {
+        transform: scale(1) translateY(0);
+    }
+    30% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+@keyframes popUpAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

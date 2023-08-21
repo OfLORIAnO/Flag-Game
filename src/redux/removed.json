@@ -1,0 +1,100 @@
+[
+    {
+        "id": 15,
+        "name": "Багамы",
+        "imageName": "Bagam",
+        "capital": "Нассау",
+        "population": "351461",
+        "level": 12,
+        "similar": [13, 155, 153, 137]
+    },
+
+    {
+        "id": 66,
+        "name": "Западная Сахара",
+        "imageName": "West Sahara",
+        "capital": "Эль-Аюн",
+        "population": "567000",
+        "level": 12,
+        "similar": [119, 64, 71, 78, 94, 133, 138]
+    },
+    {
+        "id": 211,
+        "name": "Mарокко",
+        "imageName": "Morocco-Flag-8.jpg",
+        "capital": "Рабат",
+        "population": "37984655",
+        "level": 4,
+        "similar": [68]
+    },
+    {
+        "id": 198,
+        "name": "Южная Африка",
+        "imageName": "South Africa",
+        "capital": "Претория",
+        "population": "52981991",
+        "level": 1,
+        "similar": [15, 13, 155, 153, 137]
+    },
+    {
+        "id": 133,
+        "name": "Объединённые Арабские Эмираты",
+        "imageName": "United Arab Emirates",
+        "capital": "Абу-Даби",
+        "population": "8264070",
+        "level": 2,
+        "similar": [119, 64, 71, 78, 94, 66, 138]
+    },      {
+        "id": 117,
+        "name": "Мелилья",
+        "imageName": "Mellya",
+        "capital": "MLАдминистративный центр Мелилья",
+        "population": "85584",
+        "level": 11,
+        "similar": [48, 40, 44, 57, 63, 79, 97, 107, 20, 123, 131, 147]
+    },  {
+        "id": 126,
+        "name": "Нидерландские Антилы",
+        "imageName": "Netherlands Anti",
+        "capital": "Виллемстад",
+        "population": "197041",
+        "level": 11,
+        "similar": [62, 75, 61, 135, 182, 185]
+    },
+    {
+        "id": 150,
+        "name": "Свазиленд",
+        "imageName": "Swaziland",
+        "capital": "Мбабене",
+        "population": "1250000",
+        "level": 11,
+        "similar": [3, 84, 94]
+    },
+    {
+        "id": 169,
+        "name": "Тайвань",
+        "imageName": "Taiwan",
+        "capital": "Тайбэй",
+        "population": "23379129",
+        "level": 8,
+        "similar": [69, 86, 87, 95, 113, 110, 121, 131, 137, 143, 54, 175, 177, 197]
+    },
+    {
+        "id": 171,
+        "name": "Тимор-Лесте",
+        "imageName": "Timor-Leste",
+        "capital": "Дили",
+        "population": "1066409",
+        "level": 9,
+        "similar": [5, 41, 195, 207, 15, 34]
+    },
+    {
+        "id": 9,
+        "name": "Антарктида",
+        "imageName": "Antarctica",
+        "capital": "толицы нет",
+        "population": "0",
+        "level": 12,
+        "similar": [85]
+    }
+]

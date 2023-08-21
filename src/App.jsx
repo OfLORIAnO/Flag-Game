@@ -1,6 +1,7 @@
 import './reset.css';
 import './settings.scss';
 import './App.css';
+import '/node_modules/flag-icons/css/flag-icons.min.css';
 import FlagInfo from './pages/FlagInfo';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -53,13 +54,12 @@ function App() {
     }, []);
 
     useEffect(() => {
-        PlayerSdk &&
+        if (PlayerSdk) {
             PlayerSdk.getData().then((data) => {
                 if (data.achievements?.length > 0) {
                     console.log('Тут лежит', data.achievements);
                 }
             });
-        if (PlayerSdk) {
             PlayerSdk.getData().then((data) => {
                 if (data?.score && data?.currentLevel) {
                     dispatch(setTotalScore(data.score));
@@ -129,7 +129,7 @@ function App() {
     const win = useSelector(selectWin);
 
     useEffect(() => {
-        dispatch(changePage('home'));
+        dispatch(changePage('lose'));
     }, []);
 
     return (

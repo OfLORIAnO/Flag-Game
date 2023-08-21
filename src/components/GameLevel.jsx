@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './GameLevel.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectLevelList, setCurrentLevel, setLevelList, setMaxCurrentScore, setStartGame } from '../redux/Slices/GameSlice';
 import { changePage } from '../redux/Slices/PagesSlice';
 import { selectAllData } from '../redux/Slices/DataSlice';
 import { getLevelList } from '../utils/GameFuncs';
-function GameLevel({ imageSrc, level, title, disabledStatus, maxScore }) {
+import { selectFlagMaxLevel, selectFlagScores } from '../redux/Slices/PlayerSlice';
+import { ImgMass } from '../utils/Sources';
+import { levelName } from '../utils/Sources';
+function GameLevel({ value }) {
     const dispatch = useDispatch();
+    const dataCurrentLevel = useSelector(selectFlagMaxLevel);
     const allItems = useSelector(selectAllData); // весь массив данных
-    const levelList = useSelector(selectLevelList);
+    const FlagScores = useSelector(selectFlagScores)[value - 1];
+
+    const disabledStatus = dataCurrentLevel < value;
+    const Image = ImgMass[value - 1];
+    const title = levelName[value - 1];
+
     const startGame = () => {
-        dispatch(setLevelList(getLevelList(allItems, level)));
-        dispatch(setCurrentLevel(level));
-        dispatch(setMaxCurrentScore(maxScore.max));
+        dispatch(setLevelList(getLevelList(allItems, value)));
+        dispatch(setCurrentLevel(value));
+        dispatch(setMaxCurrentScore(FlagScores.max));
         dispatch(setStartGame());
         dispatch(changePage('game'));
     };
@@ -20,11 +29,11 @@ function GameLevel({ imageSrc, level, title, disabledStatus, maxScore }) {
     return (
         <button disabled={disabledStatus} className={s.gameLevel} onClick={() => startGame()}>
             <div className={s.image}>
-                <img src={imageSrc} alt='Image' />
+                <img src={Image} alt='Image' />
             </div>
             <div className={s.text}>
                 <h3>{title}</h3>
-                {!disabledStatus && <span className={s.score}>{maxScore && `${maxScore.current}/${maxScore.max}`}</span>}
+                {!disabledStatus && <span className={s.score}>{FlagScores && `${FlagScores.current}/${FlagScores.max}`}</span>}
             </div>
         </button>
     );

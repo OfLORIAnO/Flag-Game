@@ -33,6 +33,7 @@ export const playerSlice = createSlice({
             state.flagMaxLevel = playerDataJson.currentLevel;
             console.log('Редакс отработал');
         },
+        
     },
 });
 export const selectPlayerData = (state) => state.playerStore.playerData;
@@ -45,6 +46,16 @@ export const selectTotalScore = (state) => {
               return num + score.current;
           }, 0)
         : 0;
+};
+export const selectTotalScoreOf = (state) => {
+    return state.playerStore.flagScores.length > 0
+        ? state.playerStore.flagScores.reduce((num, score) => {
+              return num + score.max;
+          }, 0)
+        : 0;
+};
+export const selectTotalProgress = (state) => {
+    return state.playerStore.flagScores.filter(item => item.current > 0).length
 };
 export const { levelComplite, setScore, setPlayerSdk, setTotalScore, setTotalLevel, setDefault } = playerSlice.actions;
 export default playerSlice.reducer;

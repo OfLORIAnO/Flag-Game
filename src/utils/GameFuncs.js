@@ -8,7 +8,7 @@ function shuffleArray(array) {
 }
 
 export const getLevelList = (allData, level) => {
-    const countQue = 1;
+    const countQue = 15;
     console.log(level);
     console.log('Не забудь поменять countQue до 15 - default');
     let currentLevelFilteredData = allData.filter((item) => item.level === level);

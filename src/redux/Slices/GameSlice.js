@@ -4,7 +4,7 @@ const initialState = {
     levelList: null, // Список из вопросов
     currentObject: null, // Текущий вопрос
     currentStep: 0, // Индекс текущего вопроса
-    lives: 2, // Количество жизней
+    lives: 3, // Количество жизней
     currentScore: 0,
     maxCurrentScore: 0,
     mode: null, // flags | capitals
@@ -80,6 +80,9 @@ export const gameSlice = createSlice({
                 state.currentLevel = state.currentLevel + 1;
             }
         },
+        setLivesOnMax: (state) => {
+            state.lives = 3
+        }
     },
 });
 export const selectCurrentLevel = (state) => state.gameStore.currentLevel;
@@ -103,5 +106,6 @@ export const {
     setMaxCurrentScore,
     setNextLevel,
     updateScore,
+    setLivesOnMax
 } = gameSlice.actions;
 export default gameSlice.reducer;

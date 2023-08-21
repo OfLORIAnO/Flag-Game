@@ -11,6 +11,7 @@ import {
     selectLives,
     selectMaxCurrentScore,
     setCurrentScore,
+    setLivesOnMax,
     timeOut,
 } from '../redux/Slices/GameSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,12 +26,13 @@ import backImg from '../assets/back.png';
 import FlagImg from '../assets/flag.png';
 import LifeImg from '../assets/life.png';
 import SoundImg from '../assets/sound.png';
-import { ImgMass } from '../utils/ImageSrc';
+import { ImgMass } from '../utils/Sources';
 import s from './Game.module.scss';
 import { formatNumber } from '../utils/FormatNumber';
 import { GetVariants } from '../utils/GameFuncs';
 import { selectAllData } from '../redux/Slices/DataSlice';
 import FlagsVarianGame from '../components/FlagsVarianGame';
+import { selectYsdk } from '../redux/Slices/AdvertSlice';
 
 function Game() {
     const dispatch = useDispatch();
@@ -40,6 +42,9 @@ function Game() {
     const [isLastQuestion, setIsLastQuestion] = useState(false);
     const [isTimerPlaying, setIsTimerPlaying] = useState(true);
     const [currentTime, setCurrentTime] = useState();
+    const [isPopUp, setIsPopUp] = useState(false);
+    const [timerRestart, setTimerRestart] = useState(0);
+    const [wasLost, setWasLost] = useState(false);
 
     const allData = useSelector(selectAllData);
     const levelList = useSelector(selectLevelList);
@@ -49,6 +54,7 @@ function Game() {
     const lives = useSelector(selectLives);
     const maxCurrentScore = useSelector(selectMaxCurrentScore);
     const currentScore = useSelector(selectCurrentScore);
+    const ysdk = useSelector(selectYsdk);
 
     const goToPrepareGame = () => {
         dispatch(resetGame());
@@ -64,10 +70,10 @@ function Game() {
         setIsTimerPlaying(false);
         if (isLastQuestion) {
             GameWin();
-            return;
         }
         const doCorrect = () => {
             dispatch(correctAns());
+            setTimerRestart((prev) => prev + 1);
             !isLastQuestion && setWasCorrect(false);
             setIsTimerPlaying(true);
             setShowGreen(false);
@@ -88,26 +94,51 @@ function Game() {
         lives == 1 && lastLive();
         setTimeout(doIncorrect, 1000);
     };
+    const showAdvert = () => {
+        setIsTimerPlaying(false);
+        ysdk.adv.showRewardedVideo({
+            callbacks: {
+                onOpen: () => {
+                    console.log('Video ad open.');
+                },
+                onRewarded: () => {
+                    console.log('Rewarded!');
+                },
+                onClose: () => {
+                    console.log('Video ad close.');
+                    dispatch(setLivesOnMax());
+                    setTimerRestart((prev) => prev + 1);
+                    setIsTimerPlaying(true);
+                    setWasLost(true);
+                },
+                onError: (e) => {
+                    console.log('Error while open video ad:', e);
+                    GameOver();
+                },
+            },
+        });
+        setIsPopUp(false);
+    };
+    const onAdvertClick = () => {
+        ysdk && showAdvert();
+    };
     const timerOut = () => {
-        isLastQuestion && GameOver();
+        isLastQuestion && setIsPopUp(true);
         dispatch(timeOut());
     };
 
     useEffect(() => {
+        setTimerRestart((prev) => prev + 1);
         currentObject && setVariants(GetVariants(allData, currentObject, variants));
     }, [step]);
     useEffect(() => {
         step === levelList.length - 1 && setIsLastQuestion(true);
         isLastQuestion && GameWin();
     }, [step]);
-    useEffect(() => {}, [step]);
 
     useEffect(() => {
-        isLastQuestion && console.log('Last question');
-    }, [isLastQuestion]);
-
-    useEffect(() => {
-        lives === 0 && GameOver();
+        wasLost && GameOver();
+        lives === 0 && !wasLost && setIsPopUp(true);
     }, [lives]);
 
     const GameOver = () => {
@@ -156,14 +187,14 @@ function Game() {
                         </button>
                         <CountdownCircleTimer
                             isPlaying={isTimerPlaying}
-                            key={step}
+                            key={timerRestart}
                             size={40}
                             strokeWidth={3}
                             colors={'#fff'}
                             trailColor={'#fff'}
                             trailStrokeWidth={1}
                             duration={20}
-                            onComplete={() => timerOut()}
+                            // onComplete={() => timerOut()}
                             onUpdate={(remainingTime) => setCurrentTime(remainingTime)}
                         >
                             {({ remainingTime }) => remainingTime}
@@ -171,7 +202,24 @@ function Game() {
                     </div>
                 </header>
             </div>
-
+            {isPopUp && (
+                <div className={s.reward}>
+                    <div className={s.popUp}>
+                        <h2>Просмотрите рекламу и получите ещё 1 шанс</h2>
+                        <button className={s.lastChange} onClick={() => onAdvertClick()}>
+                            <h3>Получить</h3>
+                            <div className={s.popUp__lives}>
+                                <img src={LifeImg} alt='Life Imgage' />
+                                <img src={LifeImg} alt='Life Imgage' />
+                                <img src={LifeImg} alt='Life Imgage' />
+                            </div>
+                        </button>
+                        <button className={s.toLose} onClick={() => GameOver()}>
+                            Отмена
+                        </button>
+                    </div>
+                </div>
+            )}
             <div className={s.info}>
                 <div className={s.capital}>
                     <img src={CapitalImg} alt='Capital Icon' />
@@ -188,9 +236,11 @@ function Game() {
                 </div>
             </div>
             <div className={s.content}>
-                <h2 className={s.title} style={{ color: showGreen ? '#229D01' : '#6252c5' }}>
-                    {currentObject.name}
-                </h2>
+                <div className={s.title}>
+                    <h2 className={s.title} style={{ color: showGreen ? '#229D01' : '#6252c5' }}>
+                        {currentObject.name}
+                    </h2>
+                </div>
                 <div className={s.flags}>{renderVariants()}</div>
             </div>
         </div>

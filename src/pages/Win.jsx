@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { ImgMass } from '../utils/ImageSrc';
+import { ImgMass } from '../utils/Sources';
 import WinImg from '../assets/Star.png';
 import LifeImg from '../assets/lifeWin.png';
 import LostLifeImg from '../assets/lifeLost.png';
@@ -92,7 +92,6 @@ function Win() {
             minusLives = Math.floor(PlayerScores[index].max * 0.3) * (3 - lives);
         }
         let scoreUpdeted = score - minusLives;
-        console.log(scoreUpdeted, minusLives);
         dispatch(updateScore(scoreUpdeted));
         return scoreUpdeted;
     };
@@ -111,21 +110,22 @@ function Win() {
         isRerendered.current = true;
     }, []);
     useEffect(() => {
-        PlayerSdk.setData({
-            score: PlayerScores,
-            currentLevel: dataCurrentLevel,
-        }).then(() => {
-            console.log('PlayerScores: ', PlayerScores, 'was set in data');
-            console.log('dataCurrentLevel: ', dataCurrentLevel, 'was set in data');
-        });
+        PlayerSdk &&
+            PlayerSdk.setData({
+                score: PlayerScores,
+                currentLevel: dataCurrentLevel,
+            }).then(() => {
+                console.log('PlayerScores: ', PlayerScores, 'was set in data');
+                console.log('dataCurrentLevel: ', dataCurrentLevel, 'was set in data');
+            });
     }, [PlayerScores]);
     const renderLivs = () => {
         const livesArray = [];
         for (let i = 0; i < lives; i++) {
-            livesArray.push(<img key={i} src={LifeImg} alt={`${lives} Life`} />);
+            livesArray.push(<img key={'live_' + i} src={LifeImg} alt={`${lives} Life`} />);
         }
         for (let j = 0; j < 3 - lives; j++) {
-            livesArray.push(<img key={j + 3} src={LostLifeImg} alt={`${lives} Life`} />);
+            livesArray.push(<img key={+'live_' + j + 50} src={LostLifeImg} alt={`${lives} Life`} />);
         }
         return livesArray;
     };
