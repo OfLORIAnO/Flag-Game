@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
-    currentLevel: 12, // Номер уровня в игре
+    currentLevel: null, // Номер уровня в игре
     levelList: null, // Список из вопросов
     currentObject: null, // Текущий вопрос
     currentStep: 0, // Индекс текущего вопроса
