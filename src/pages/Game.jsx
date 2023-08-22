@@ -17,16 +17,12 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { changePage } from '../redux/Slices/PagesSlice';
 
-import Header from '../components/Header';
-
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import CapitalImg from '../assets/capital.png';
 import PopulationImg from '../assets/population.png';
 import backImg from '../assets/back.png';
-import FlagImg from '../assets/flag.png';
 import LifeImg from '../assets/life.png';
-import SoundImg from '../assets/sound.png';
-import { ImgMass } from '../utils/Sources';
+import { ImgMass, levelName } from '../utils/Sources';
 import s from './Game.module.scss';
 import { formatNumber } from '../utils/FormatNumber';
 import { GetVariants } from '../utils/GameFuncs';
@@ -52,8 +48,6 @@ function Game() {
     const currentObject = useSelector(selectCurrentObject);
     const step = useSelector(selectCurrentStep);
     const lives = useSelector(selectLives);
-    const maxCurrentScore = useSelector(selectMaxCurrentScore);
-    const currentScore = useSelector(selectCurrentScore);
     const ysdk = useSelector(selectYsdk);
 
     const goToPrepareGame = () => {
@@ -61,9 +55,7 @@ function Game() {
         dispatch(changePage('gamePrepare'));
     };
 
-    useEffect(() => {
-        console.log(`${currentScore}/${maxCurrentScore}`);
-    }, [maxCurrentScore, currentScore]);
+
 
     const correct = () => {
         dispatch(setCurrentScore(currentTime));
@@ -94,12 +86,18 @@ function Game() {
         lives == 1 && lastLive();
         setTimeout(doIncorrect, 1000);
     };
+    const onAdvertClick = () => {
+        ysdk && showAdvert();
+    };
     const showAdvert = () => {
         setIsTimerPlaying(false);
         ysdk.adv.showRewardedVideo({
             callbacks: {
                 onOpen: () => {
                     console.log('Video ad open.');
+                    setTimerRestart((prev) => prev + 1);
+                    setIsTimerPlaying(true);
+                    setWasLost(true);
                 },
                 onRewarded: () => {
                     console.log('Rewarded!');
@@ -107,9 +105,6 @@ function Game() {
                 onClose: () => {
                     console.log('Video ad close.');
                     dispatch(setLivesOnMax());
-                    setTimerRestart((prev) => prev + 1);
-                    setIsTimerPlaying(true);
-                    setWasLost(true);
                 },
                 onError: (e) => {
                     console.log('Error while open video ad:', e);
@@ -118,13 +113,6 @@ function Game() {
             },
         });
         setIsPopUp(false);
-    };
-    const onAdvertClick = () => {
-        ysdk && showAdvert();
-    };
-    const timerOut = () => {
-        isLastQuestion && setIsPopUp(true);
-        dispatch(timeOut());
     };
 
     useEffect(() => {
@@ -141,11 +129,15 @@ function Game() {
         lives === 0 && !wasLost && setIsPopUp(true);
     }, [lives]);
 
+    const goToLosePage = () => {
+        dispatch(changePage('lose'));
+    };
     const GameOver = () => {
         goToLosePage();
     };
-    const goToLosePage = () => {
-        dispatch(changePage('lose'));
+    const timerOut = () => {
+        isLastQuestion && setIsPopUp(true);
+        dispatch(timeOut());
     };
     const GameWin = () => {
         dispatch(changePage('win'));
@@ -178,12 +170,12 @@ function Game() {
                     </div>
                     <div className={s.header_center}>
                         <img src={ImgMass[level - 1]} alt='Level Icon Image' />
-                        <h1>Уровень {level}</h1>
+                        <h1>{levelName[level - 1]}</h1>
                     </div>
                     <div className={s.header_right}>
                         <button className={s.sound}>
                             {/* <img src={SoundImg} alt='' /> */}
-                            {`${step} / ${levelList.length}`}
+                            {/* {`${step+1} / ${levelList.length}`} */}
                         </button>
                         <CountdownCircleTimer
                             isPlaying={isTimerPlaying}
@@ -194,7 +186,7 @@ function Game() {
                             trailColor={'#fff'}
                             trailStrokeWidth={1}
                             duration={20}
-                            // onComplete={() => timerOut()}
+                            onComplete={() => timerOut()}
                             onUpdate={(remainingTime) => setCurrentTime(remainingTime)}
                         >
                             {({ remainingTime }) => remainingTime}

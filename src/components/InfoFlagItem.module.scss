@@ -3,6 +3,7 @@
     padding: 20px;
     display: flex;
     align-content: center;
+    background: $primary;
     @media (max-width: 470px) {
         display: block;
     }

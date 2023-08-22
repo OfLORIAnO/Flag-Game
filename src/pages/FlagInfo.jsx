@@ -4,30 +4,26 @@ import Header from '../components/Header';
 import s from './FlagInfo.module.scss';
 import Search from '../components/Search';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    filterData,
-    selectAllData,
-    selectFiltered,
-} from '../redux/Slices/DataSlice';
+import { filterData, selectAllData, selectFiltered } from '../redux/Slices/DataSlice';
 import InfoFlagItem from '../components/InfoFlagItem';
+import { compare } from '../utils/FormatNumber';
 function FlagInfo() {
+    const dispatch = useDispatch();
+
     const data = useSelector(selectAllData);
     const filterValue = useSelector(selectFiltered);
-    const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(filterData(''));
     }, []);
+
     const renderData = () => {
         if (filterValue) {
             return data
                 .filter((item) => {
                     if (
-                        item.name
-                            .toLowerCase()
-                            .includes(filterValue.toLowerCase()) ||
-                        item.capital
-                            .toLowerCase()
-                            .includes(filterValue.toLowerCase())
+                        item.name.toLowerCase().includes(filterValue.toLowerCase()) ||
+                        item.capital.toLowerCase().includes(filterValue.toLowerCase())
                     ) {
                         return true;
                     }
@@ -35,20 +31,14 @@ function FlagInfo() {
                 })
                 .map((item) => <InfoFlagItem item={item} key={item.id} />);
         } else {
-            return data.map((item) => (
-                <InfoFlagItem item={item} key={item.id} />
-            ));
+            let dataSorted = [...data].sort(compare);
+            return dataSorted.map((item) => <InfoFlagItem item={item} key={item.id} />);
         }
     };
 
     return (
         <>
             <Header title={'Все флаги'} imgSource={FlagImg} moveTo={'home'} />
-            {/* {data.map((item) => (
-                <span>
-                    {item.id} - {item.name},
-                </span>
-            ))} */}
             <div className={s.wrapper}>
                 <Search />
                 <div className={s.items_wrapper}>{renderData()}</div>

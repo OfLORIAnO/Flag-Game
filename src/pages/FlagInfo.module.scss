@@ -10,18 +10,21 @@
 .items_wrapper {
     margin: 15px 0px 0px 0px;
     border-radius: 10px;
-    box-shadow: $box-shadow;
-    background: $primary;
+    overflow: hidden;
     color: #fff;
     display: grid;
     grid-template-columns: 1fr;
-    & > :not(:last-child) {
+    & > :not(:last-child),
+    & > :nth-last-child(2) {
         border-bottom: 2px solid $secondary;
     }
     @media (min-width: 900px) {
         grid-template-columns: repeat(2, 1fr);
         & > :nth-child(odd) {
             border-right: 2px solid $secondary;
+        }
+        & > :nth-last-child(2) {
+            border-bottom: none;
         }
     }
 }

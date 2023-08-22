@@ -16,6 +16,7 @@
     margin: 0 auto 100px auto;
     display: flex;
     align-items: center;
+    justify-self: flex-end;
     @media (max-width: 650px) {
         flex-direction: column;
     }

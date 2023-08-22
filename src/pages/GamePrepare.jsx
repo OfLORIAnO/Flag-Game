@@ -2,14 +2,14 @@ import React from 'react';
 import Header from '../components/Header';
 import GameLevel from '../components/GameLevel';
 
-import FlagImg from '../assets/flag.png';
+import PlayImg from '../assets/Play.png';
 
 import s from './GamePrepare.module.scss';
 
 export default function GamePrepare() {
     return (
         <>
-            <Header title={'Игра'} imgSource={FlagImg} moveTo={'home'} />
+            <Header title={'Игра'} imgSource={PlayImg} moveTo={'home'} />
             <h2 className={s.title}>Выберите сложность</h2>
             <div className={s.wrapper}>
                 <GameLevel key={1} value={1} />

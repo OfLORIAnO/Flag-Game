@@ -8,3 +8,12 @@ export const formatNumber = (num) => {
         return number.toString();
     }
 };
+export let compare = (a, b) => {
+    if (a.level < b.level) {
+        return -1;
+    }
+    if (a.level > b.level) {
+        return 1;
+    }
+    return 0;
+};
