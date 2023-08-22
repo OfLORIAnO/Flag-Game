@@ -8,7 +8,7 @@ import AmbassadorImg from '../assets/businessman.png';
 import SpyImg from '../assets/spy.png';
 import SailorImg from '../assets/sailor.png';
 import CaptainImg from '../assets/captain.png';
-import PresidentImg from '../assets/president.png';
+import PresidentImg from '../assets/pesident.png';
 import AlienImg from '../assets/alien.png';
 
 export const ImgMass = [
