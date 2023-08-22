@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import FlagHeaderImg from '../assets/flagMain.png';
 import PlayImg from '../assets/Play.png';
 import FlagImg from '../assets/flag.png';
-import ProfileImg from '../assets/Profile.png';
+import ProfileImg from '../assets/Profile.png'
 
 import s from './Home.module.scss';
 import HomeRouters from '../components/HomeRouters';

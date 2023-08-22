@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import s from './Profile.module.scss';
-import ProfileImg from '../assets/profile.png';
+import ProfileImg from '../assets/Profile.png';
 import StarImg from '../assets/Star.png';
 import RewardImg from '../assets/reward.png';
 import { useSelector } from 'react-redux';
