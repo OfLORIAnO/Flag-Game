@@ -3,7 +3,7 @@ import StudentImg from '../assets/student.png';
 import TeacherImg from '../assets/teacher.png';
 import JournalistImg from '../assets/journalist.png';
 import AdventureImg from '../assets/adventure.png';
-import TravelerImg from '../assets/traveler.png'
+import TravelerImg from '../assets/taveler.png'
 import AmbassadorImg from '../assets/businessman.png';
 import SpyImg from '../assets/spy.png';
 import SailorImg from '../assets/sailor.png';
