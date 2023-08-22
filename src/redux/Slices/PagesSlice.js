@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
-    home: false,
+    home: true,
     flagInfo: false,
     gamePrepare: false,
     profile: false,
     game: false,
-    lose: true,
+    lose: false,
     win: false,
 };
 export const pageSlice = createSlice({

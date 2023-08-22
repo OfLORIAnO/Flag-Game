@@ -129,7 +129,7 @@ function App() {
     const win = useSelector(selectWin);
 
     useEffect(() => {
-        dispatch(changePage('win'));
+        dispatch(changePage('home'));
     }, []);
 
     return (
