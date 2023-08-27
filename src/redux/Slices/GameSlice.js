@@ -8,6 +8,7 @@ const initialState = {
     currentScore: 0,
     maxCurrentScore: 0,
     mode: null, // flags | capitals
+    lastLevel: null,
 };
 export const gameSlice = createSlice({
     name: 'gameStore',
@@ -82,6 +83,9 @@ export const gameSlice = createSlice({
         },
         setLivesOnMax: (state) => {
             state.lives = 3
+        },
+        setLastLevel: (state, action) => {
+            state.lastLevel = action.payload
         }
     },
 });
@@ -92,6 +96,7 @@ export const selectCurrentStep = (state) => state.gameStore.currentStep;
 export const selectLives = (state) => state.gameStore.lives;
 export const selectMaxCurrentScore = (state) => state.gameStore.maxCurrentScore;
 export const selectCurrentScore = (state) => state.gameStore.currentScore;
+export const selectLastLevel = (state) => state.gameStore.lastLevel;
 
 export const {
     setCurrentLevel,
@@ -106,6 +111,7 @@ export const {
     setMaxCurrentScore,
     setNextLevel,
     updateScore,
-    setLivesOnMax
+    setLivesOnMax,
+    setLastLevel
 } = gameSlice.actions;
 export default gameSlice.reducer;

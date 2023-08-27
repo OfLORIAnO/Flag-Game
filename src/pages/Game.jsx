@@ -151,9 +151,18 @@ function Game() {
         goToLosePage();
     };
     const timerOut = () => {
-        isLastQuestion && setIsPopUp(true);
+        if (isLastQuestion) {
+            setIsPopUp(true);
+            return;
+        }
         console.log('Таймер закончился - минус жизнь ');
-        dispatch(timeOut());
+        if (lives === 1) {
+            console.log('Жизней 0');
+            setIsTimerPlaying(false);
+            dispatch(incorrectAns());
+        } else {
+            dispatch(timeOut());
+        }
     };
     const GameWin = () => {
         dispatch(changePage('win'));
@@ -208,7 +217,7 @@ function Game() {
                             colors={'#fff'}
                             trailColor={'#fff'}
                             trailStrokeWidth={1}
-                            duration={20}
+                            duration={7}
                             onComplete={() => timerOut()}
                             onUpdate={(remainingTime) => setCurrentTime(remainingTime)}
                         >

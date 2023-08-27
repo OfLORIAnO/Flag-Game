@@ -31,13 +31,18 @@ export const getLevelList = (allData, level) => {
             } else if (level == 12) {
                 randomNum -= 2;
             }
-            const dataRandLevel = allData.filter((item) => item.level === randomNum + level);
-            const DataRandElem = dataRandLevel[Math.floor(Math.random() * dataRandLevel.length)];
+            const dataRandLevel = allData.filter(
+                (item) => item.level === randomNum + level
+            );
+            const DataRandElem =
+                dataRandLevel[Math.floor(Math.random() * dataRandLevel.length)];
             if (!otherLevelFilteredData.includes(DataRandElem)) {
                 otherLevelFilteredData.push(DataRandElem);
             }
         }
-        currentLevelFilteredData = currentLevelFilteredData.concat(otherLevelFilteredData);
+
+        currentLevelFilteredData =
+            currentLevelFilteredData.concat(otherLevelFilteredData);
         const shuffledArray = shuffleArray(currentLevelFilteredData);
         return shuffledArray;
     }
@@ -67,7 +72,9 @@ export const GetVariants = (allData, currentObject, prevObjects) => {
         let findedElem = allData.find((item) => item.id === RandIndex);
         if (findedElem) {
             readyMass.push(massOfSimilar[RandIndex]);
-            massOfSimilar = massOfSimilar.filter((item) => item.id !== massOfSimilar[RandIndex].id);
+            massOfSimilar = massOfSimilar.filter(
+                (item) => item.id !== massOfSimilar[RandIndex].id
+            );
         }
     }
     readyMass.push(currentObject);
