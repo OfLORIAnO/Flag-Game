@@ -3,3 +3,47 @@ html,
 #root {
     height: 100%;
 }
+body {
+    padding: 0;
+}
+* {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+* {
+    /* overflow-y: scroll; Включает скроллинг по умолчанию */
+    scrollbar-width: 0; /* Скрываем стандартный скроллбар в Firefox */
+    -ms-overflow-style: none; /* Скрываем стандартный скроллбар в IE и Edge */
+    scrollbar-width: 0;
+    -ms-overflow-style: none;
+}
+
+/* Добавляем стили для WebKit-браузеров (Chrome, Safari) */
+*::-webkit-scrollbar {
+    width: 0em;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Скрываем ползунок скроллбара */
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent; /* Скрываем трек скроллбара */
+}
+* {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+    width: 0.2em;
+}
+
+/* Скроем горизонтальный скроллбар (если он есть) */
+*::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}

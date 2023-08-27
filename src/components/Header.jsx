@@ -17,7 +17,7 @@ function Header({ title, imgSource, moveTo }) {
             )}
 
             <div className={s.content}>
-                <img src={imgSource} alt='FlagImg' />
+                {imgSource && <img src={imgSource} alt='FlagImg' />}
                 <h1>{title}</h1>
             </div>
         </div>

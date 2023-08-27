@@ -2,6 +2,10 @@
 /*Обнуление*/
 body {
     overflow-x: hidden;
+    padding: 0;
+}
+#root {
+    padding: 0;
 }
 * {
     padding: 0;

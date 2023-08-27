@@ -40,8 +40,6 @@ function App() {
     const canShow = useSelector(selectCanShowAdv);
     const ysdk = useSelector(selectYsdk);
 
-    const PlayerScores = useSelector(selectFlagScores);
-    const dataCurrentLevel = useSelector(selectFlagMaxLevel);
 
     const PlayerSdk = useSelector(selectPlayerSdk);
     const dispatch = useDispatch();
@@ -87,20 +85,8 @@ function App() {
             initPlayer()
                 .then((_player) => {
                     if (_player.getMode() === 'lite') {
-                        // Игрок не авторизован.
                         console.log('Игрок не авторизован.');
-                        ysdk.auth
-                            .openAuthDialog()
-                            .then(() => {
-                                console.log('Игрок успешно авторизован.');
-
-                                initPlayer().catch((err) => {
-                                    console.log('2 Ошибка при инициализации объекта Player.');
-                                });
-                            })
-                            .catch(() => {
-                                console.log('Игрок не авторизован');
-                            });
+                        
                     }
                 })
                 .catch((err) => {

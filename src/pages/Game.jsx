@@ -5,18 +5,16 @@ import {
     resetGame,
     selectCurrentLevel,
     selectCurrentObject,
-    selectCurrentScore,
     selectCurrentStep,
     selectLevelList,
     selectLives,
-    selectMaxCurrentScore,
     setCurrentScore,
     setLivesOnMax,
     timeOut,
 } from '../redux/Slices/GameSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { changePage } from '../redux/Slices/PagesSlice';
-
+import '../App.css';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import CapitalImg from '../assets/capital.png';
 import PopulationImg from '../assets/population.png';
@@ -55,8 +53,6 @@ function Game() {
         dispatch(changePage('gamePrepare'));
     };
 
-
-
     const correct = () => {
         dispatch(setCurrentScore(currentTime));
         setIsTimerPlaying(false);
@@ -91,28 +87,42 @@ function Game() {
     };
     const showAdvert = () => {
         setIsTimerPlaying(false);
-        ysdk.adv.showRewardedVideo({
-            callbacks: {
-                onOpen: () => {
-                    console.log('Video ad open.');
-                    setTimerRestart((prev) => prev + 1);
-                    setIsTimerPlaying(true);
-                    setWasLost(true);
+        try {
+            ysdk.adv.showRewardedVideo({
+                callbacks: {
+                    onOpen: () => {
+                        console.log('Video ad open.');
+                        setTimerRestart((prev) => prev + 1);
+                        setIsTimerPlaying(false);
+                    },
+                    onRewarded: () => {
+                        console.log('Rewarded!');
+                    },
+                    onClose: () => {
+                        console.log('Video ad close.');
+                        dispatch(setLivesOnMax());
+                        setWasLost(true);
+                    },
+                    onError: (e) => {
+                        console.log('Error while open video ad:', e);
+                        setTimerRestart((prev) => prev + 1);
+                        setIsTimerPlaying(false);
+                        dispatch(setLivesOnMax());
+                        setWasLost(true);
+                    },
                 },
-                onRewarded: () => {
-                    console.log('Rewarded!');
-                },
-                onClose: () => {
-                    console.log('Video ad close.');
-                    dispatch(setLivesOnMax());
-                },
-                onError: (e) => {
-                    console.log('Error while open video ad:', e);
-                    GameOver();
-                },
-            },
-        });
-        setIsPopUp(false);
+            });
+            setIsTimerPlaying(true);
+        } catch (error) {
+            // console.log(error);
+            console.log('Video ad open.');
+            setTimerRestart((prev) => prev + 1);
+            setIsTimerPlaying(true);
+            setWasLost(true);
+            dispatch(setLivesOnMax());
+        } finally {
+            setIsPopUp(false);
+        }
     };
 
     useEffect(() => {
@@ -122,10 +132,15 @@ function Game() {
     useEffect(() => {
         step === levelList.length - 1 && setIsLastQuestion(true);
         isLastQuestion && GameWin();
+        console.log(step + 1 + '/' + levelList.length);
     }, [step]);
 
+    // useEffect(() => {
+    //     isLastQuestion && setWasLost(true);
+    // }, [isLastQuestion]);
+
     useEffect(() => {
-        wasLost && GameOver();
+        lives === 0 && wasLost && GameOver();
         lives === 0 && !wasLost && setIsPopUp(true);
     }, [lives]);
 
@@ -137,6 +152,7 @@ function Game() {
     };
     const timerOut = () => {
         isLastQuestion && setIsPopUp(true);
+        console.log('Таймер закончился - минус жизнь ');
         dispatch(timeOut());
     };
     const GameWin = () => {
@@ -154,7 +170,15 @@ function Game() {
         return (
             variants &&
             variants.map((item) => {
-                return <FlagsVarianGame allDisabled={wasCorrect} key={item.id} item={item} correct={correct} incorrect={incorrect} />;
+                return (
+                    <FlagsVarianGame
+                        allDisabled={wasCorrect}
+                        key={item.id}
+                        item={item}
+                        correct={correct}
+                        incorrect={incorrect}
+                    />
+                );
             })
         );
     };
@@ -163,7 +187,10 @@ function Game() {
             <div className={s.header__container}>
                 <header className={s.header}>
                     <div className={s.header_left}>
-                        <button className={s.changePage} onClick={() => goToPrepareGame()}>
+                        <button
+                            className={s.changePage}
+                            onClick={() => goToPrepareGame()}
+                        >
                             <img src={backImg} alt='Button Back' />
                         </button>
                         <div className={s.lives}>{renderLivs()}</div>
@@ -173,10 +200,6 @@ function Game() {
                         <h1>{levelName[level - 1]}</h1>
                     </div>
                     <div className={s.header_right}>
-                        <button className={s.sound}>
-                            {/* <img src={SoundImg} alt='' /> */}
-                            {/* {`${step+1} / ${levelList.length}`} */}
-                        </button>
                         <CountdownCircleTimer
                             isPlaying={isTimerPlaying}
                             key={timerRestart}
@@ -224,12 +247,21 @@ function Game() {
             </div>
             <div className={s.progress}>
                 <div className={s.out}>
-                    <div className={s.bar} style={{ width: `${(step / 20) * 100}%` }}></div>
+                    <div
+                        className={s.bar}
+                        style={{
+                            width: `${(step / levelList.length) * 100}%`,
+                            height: `${(step / levelList.length) * 100}%`,
+                        }}
+                    ></div>
                 </div>
             </div>
             <div className={s.content}>
                 <div className={s.title}>
-                    <h2 className={s.title} style={{ color: showGreen ? '#229D01' : '#6252c5' }}>
+                    <h2
+                        className={s.title}
+                        style={{ color: showGreen ? '#229D01' : '#6252c5' }}
+                    >
                         {currentObject.name}
                     </h2>
                 </div>
