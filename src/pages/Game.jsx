@@ -217,7 +217,7 @@ function Game() {
                             colors={'#fff'}
                             trailColor={'#fff'}
                             trailStrokeWidth={1}
-                            duration={7}
+                            duration={20}
                             onComplete={() => timerOut()}
                             onUpdate={(remainingTime) => setCurrentTime(remainingTime)}
                         >
